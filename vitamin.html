@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ViTamin: Designing Scalable Vision Models in the Vision-Language Era">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ViTamin: Design Scalable Vision Models in the Vision-Language Era</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/vitaminicon.png  ">
+  <link rel="stylesheet" href="./static/css/float.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css"> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js"></script> -->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     
+      "HTML-CSS": {
+          styles: {
+              '.MathJax_Display': {
+                  color: "black"
+              }
+          }
+      }
+    });
+
+    
+  </script>
+
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"> ViTamin: Designing Scalable Vision Models in the Vision-Language Era</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://beckschen.github.io">Jieneng Chen</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://yucornetto.github.io/">Qihang Yu</a><sup>2*</sup>,</span>
+            <span class="author-block">
+              <a href="https://xiaohuishen.github.io/">Xiaohui Shen</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://liangchiehchen.com/">Liang-Chieh Chen</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Johns Hopkins University,</span>
+            <span class="author-block"><sup>2</sup>ByteDance</span>
+            <span class="author-block">(<sup>*</sup>Equal Contribution)</span>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Beckschen/ViTamin"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span> -->
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/teaser.png"
+                class="interpolation-image"
+                alt="Interpolate start reference image."/>
+      <h2 class="subtitle has-text-centered">
+        We benchmark modern vision models with various model and data scales under CLIP setting using DataComp-1B, leading to findings about data and model scalability, feature resolution, and hybrid architecture, which motivate us to develop ViTamin for VLM. ViTamin-L achieves superior zero-shot performance over ViT-L/14 on ImageNet and average 38 datasets, and advances a suite of 22 downstream tasks for Open-Vocabulary (OV) detection and segmentation, and Large Multi-modal Model (LMM).
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">  Abstract</h2>
+        <div class="content has-text-justified">
+          <p style="font-size: 20px;">
+Recent breakthroughs in vision-language models (VLMs) start a new page in the vision community. The VLMs provide stronger and more generalizable feature embeddings compared to those from ImageNet-pretrained models, thanks to the training on the large-scale Internet image-text pairs.
+However, despite the amazing achievement from the VLMs, vanilla Vision Transformers (ViTs) remain the default choice for the image encoder. Although pure transformer proves its effectiveness in the text encoding area, it remains questionable whether it is also the case for image encoding, especially considering that various types of networks are proposed on the ImageNet benchmark, which, unfortunately, are rarely studied in VLMs. Due to small data/model scale, the original conclusions of model design on ImageNet can be limited and biased. In this paper, we aim at building an evaluation protocol of vision models in the vision-language era under the contrastive language-image pretraining (CLIP) framework. We provide a comprehensive way to benchmark different vision models, covering their zero-shot performance and scalability in both model and training data sizes. To this end, we introduce ViTamin, a new vision models tailored for VLMs.
+ViTamin-L significantly outperforms ViT-L by 2.0% ImageNet zero-shot accuracy, when using the same publicly available DataComp-1B dataset and the same OpenCLIP training scheme.
+ViTamin-L presents promising results on 60 diverse benchmarks, including classification, retrieval, open-vocabulary detection and segmentation, and large multi-modal models.
+When further scaling up the model size, our ViTamin-XL with only 436M parameters attains 82.9% ImageNet zero-shot accuracy, surpassing 82.0% achieved by EVA-E that has ten times more parameters (4.4B).
+
+</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<section class="hero is-light is-big", style="margin-top: -35px">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <br>
+        <br>
+        <h2 class="title is-3">🔥 Highlights</h2>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-five-fifths">
+        <p style="font-size: 20px;">
+          1. <b>We present ViTamin</b>, <span style="color: rgb(176, 152, 31)">a novel scalable vision encoder in the vision-language era.</span> 
+        </p>
+        <br>
+        <p style="font-size: 20px;">
+          2. <b>We benchmark modern vision models</b> in the vision-language era under the contrastive language-image pretraining (CLIP) framework, covering their <span style="color: rgb(176, 152, 31)">zero-shot performance and scalability in both model and training data sizes</span>. 
+        </p>
+        <br>
+        <p style="font-size: 20px;">
+          3. <b>ViTamin achieves new state-of-the-art results</b> across a spectrum of benchmarks, <span style="color: rgb(176, 152, 31)">including classification, retrieval, open-vocabulary detection and segmentation, and large multi-modal model etc.</span>, significantly surpassing competing methods.
+        </p>
+        <br><br>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3"> Benchmarking Vision Models under CLIP setting</h2>
+      </div>
+    </div>
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+
+        <p style="font-size: 20px;">
+          We benchmark vision models under CLIP setting on DataComp-1B, including ViT (a pure Transformer), ConvNeXt (a pure
+  ConvNet), and CoAtNet (a hybrid model). We examine their scalability in terms of both data sizes (1st row) and model scales (2nd row),
+  and further analyze the results from the aspects of feature resolution (3rd row) and hybrid architecture (4th row).
+        </p>    
+        <div class="column is-centered ">
+      <img src="./static/images/benchmark.png"
+                class="interpolation-image"
+                alt="Interpolate start reference image."/>
+
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3"> Model Architecture</h2>
+      </div>
+    </div>
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        
+        <p style="font-size: 20px;">
+        <strong>Overview of ViTamin architecture.</strong> ViTamin begins with a convolutional stem (i.e., two 3x3 convolutions), followed by Mobile Convolution Blocks (MBConv) in stage 1 and 2, and Transformer Blocks (TFB) in stage 3. The 2D input to the stage 3 is flatten to 1D.  
+                  For the macro-level designs, the three-stage layout generates the final feature map with output stride 16, similar to ViT/16. We set channels sizes for the three stages to be (\(C\), \(2C\), \(6C\)) that is empirically effective.
+                  For the micro-level designs, the employed MBConv-LN modifies MBConv by using a single LayerNorm. Unlike the original Transformer Block (TFB), the adopted TFB-GeGLU upgrades its FFNs (Feed-Forward Networks) with GELU Gated Linear Units.
+        </p>   
+        <div class="column is-centered ">
+          <img src="./static/images/arch.png"
+                class="interpolation-image"
+                alt="Interpolate start reference image."/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3"> New State-of-the-art</h2>
+      </div>
+    </div>
+    <p style="font-size: 20px;">
+    ViTamin achieves new state-of-the-art results across a spectrum of benchmarks, including zero-shot classification and retrieval, open-vocabulary detection and segmentation, and large multi-modal model etc.
+  </p>   
+    <div class="column is-full-width">
+      <div class="content">
+        <h2 class="title is-4">Zero-shot Classification/Retrieval Accuracy</h2>
+       <div class="column is-full-width">
+        <figure>
+        <img src="./static/images/table3.png"
+        class="column is-centered"
+           alt="Interpolate start reference image." />
+           <!-- <figcaption style="width:400px;">This is the figure captions.</figcaption> -->
+          </figure>
+          </div>
+      </div>
+    </div>
+
+    <div class="column is-five-fifths">
+      <div class="content">
+        <h2 class="title is-4">Open-Vocabulary Detection and Segmentation</h2>
+       <div class="column is-full-width">
+
+        <figure>
+        <img src="./static/images/det.jpeg"
+        class="column is-centered"
+           alt="Interpolate start reference image." />
+           <figcaption style="width:800px;">This is the result of open-vocabulary detection using Sliding F-ViT framework.</figcaption>
+
+           <img src="./static/images/segm.jpeg"
+           class="column is-centered"
+              alt="Interpolate start reference image." />
+              <figcaption style="width:800px;">This is the result of open-vocabulary segmentation using Sliding FC-CLIP framework.</figcaption>
+          </figure>
+          </div>
+      </div>
+    </div>
+
+    <div class="column is-five-fifths">
+      <div class="content">
+        <h2 class="title is-4">Large Multi-modal models</h2>
+       <div class="column is-full-width">
+        
+        <figure>
+    
+          <img src="./static/images/lmm.jpeg"
+          class="column is-centered"
+             alt="Interpolate start reference image." />
+             <figcaption style="width:800px;">This is the result of large multi-modal model using LLaVA framework.</figcaption>
+          </figure>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{chen2024vitamin,
+      title={Design Scalable Vision Models in the Vision-language Era},
+      author={Chen, Jieneng and Yu, Qihang and Shen, Xiaohui and Yuille, ALan and Chen, Liang-Chieh},
+      journal={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+      year={2024}
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This website is adapted from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license"
+            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+Commons Attribution-ShareAlike 4.0 International License</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
