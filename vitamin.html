@@ -248,7 +248,7 @@ When further scaling up the model size, our ViTamin-XL with only 436M parameters
       <div class="column is-full-width">
         
         <p style="font-size: 20px;">
-        <strong>Overview of ViTamin architecture.</strong> ViTamin begins with a convolutional stem (i.e., two 3x3 convolutions), followed by Mobile Convolution Blocks (MBConv) in stage 1 and 2, and Transformer Blocks (TFB) in stage 3. The 2D input to the stage 3 is flatten to 1D.  
+        <strong>Overview of ViTamin architecture.</strong> ViTamin begins with a convolutional stem (i.e., two 3x3 convolutions), followed by Mobile Convolution Blocks (MBConv) in stage 1 and 2, and Transformer Blocks (TFB) in stage 3. The 2D input to the stage 3 is flattened to 1D.  
                   For the macro-level designs, the three-stage layout generates the final feature map with output stride 16, similar to ViT/16. We set channels sizes for the three stages to be (\(C\), \(2C\), \(6C\)) that is empirically effective.
                   For the micro-level designs, the employed MBConv-LN modifies MBConv by using a single LayerNorm. Unlike the original Transformer Block (TFB), the adopted TFB-GeGLU upgrades its FFNs (Feed-Forward Networks) with GELU Gated Linear Units.
         </p>   
