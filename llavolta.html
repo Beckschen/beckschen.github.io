@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="LLaVolta: Efficient Multi-modal Models via Stage-wise Visual Context Compression">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLaVolta: Efficient Multi-modal Models via Stage-wise Visual Context Compression</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/jhu_icon.png  ">
+  <link rel="stylesheet" href="./static/css/float.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css"> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js"></script> -->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     
+      "HTML-CSS": {
+          styles: {
+              '.MathJax_Display': {
+                  color: "black"
+              }
+          }
+      }
+    });
+
+    
+  </script>
+
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"> LLaVolta: Efficient Multi-modal Models via Stage-wise Visual Context Compression</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://beckschen.github.io">Jieneng Chen</a>,</span>
+            <span class="author-block">
+              <a href="https://ccvl.jhu.edu/">Luoxin Ye</a>,</span>
+            <span class="author-block">
+              <a href="https://tacju.github.io/">Ju He</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://aiem.jhu.edu/people/zhaoyang-wang/">Zhaoyang Wang</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://danielkhashabi.com/">Daniel Khashabi</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Johns Hopkins University</span>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Beckschen/LLaVolta"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/staging.png"
+                class="interpolation-image"
+                alt="Interpolate start reference image."/>
+      <h2 class="subtitle has-text-centered">
+        This is the meta framework of LLaVolta, consisting with multiple training stages: Stage I with heavy visual compression; Stage II with light visual compression in deeper layer with wider token window; Stage III with standard MLLM training (as there is also no compression in standard inference). This  can accelerate the training by 16%+ while maintaining performance.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">  Abstract</h2>
+        <div class="content has-text-justified">
+          <p style="font-size: 20px;">
+While significant advancements have been made in compressed representations for text embeddings in large language models (LLMs), the compression of visual tokens in large multi-modal models (LMMs) has remained a largely overlooked area. In this work, we present the study on the analysis of redundancy concerning visual tokens and efficient training within these models. Our initial experiments show that eliminating up to 70% of visual tokens at the testing stage by simply average pooling only leads to a minimal 3% reduction in visual question answering accuracy on the GQA benchmark, indicating significant redundancy in visual context. Addressing this, we introduce <b>Visual Context Compressor</b>, which reduces the number of visual tokens during training to enhance training efficiency without sacrificing performance. To minimize information loss caused by the compression on visual tokens while maintaining training efficiency, we develop <b>LLaVolta</b> as a lite training scheme. LLaVolta incorporates stage-wise visual context compression to progressively compress the visual tokens from heavily to lightly, and finally no compression at the end of training, yielding no loss of information when testing. Extensive experiments demonstrate that our approach enhances the performance of MLLMs in both <b>image-language and video-language understanding</b>, while also significantly cutting training costs.
+</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<section class="hero is-light is-big", style="margin-top: -35px">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <br>
+        <br>
+        <h2 class="title is-3">🔥 Highlights</h2>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-five-fifths">
+        <p style="font-size: 20px;">
+          1. We present two initial studies to verify the <span style="color: rgb(176, 152, 31)">redundancy</span> of visual tokens <span style="color: rgb(176, 152, 31)">in MLLMs</span>.
+        </p>
+        <br>
+        <p style="font-size: 20px;">
+          2. We propose the  <span style="color: rgb(176, 152, 31)">Visual Context Compressor</span>, a simple yet effective compression technique that utilizes an average pooler, enhancing the efficiency of multi-modal models.
+        </p>
+        <br>
+        <p style="font-size: 20px;">
+          3. We propose the <span style="color: rgb(176, 152, 31)">LLaVolta</span> as an efficient training scheme by leveraging \method at multiple training stages with a progressively decreasing compression ratio. To the best of our knowledge, we are among the first to explore efficient training of MLLMs.
+        </p>
+        <br>
+        <p style="font-size: 20px;">
+          4. Extensive experiments show that our approach not only improves the performance of MLLMs in <span style="color: rgb(176, 152, 31)">image-language</span> and <span style="color: rgb(176, 152, 31)">video-language understanding</span> across 16 benchmarks but also showcases efficiency gains by <span style="color: rgb(176, 152, 31)">reducing training costs by 16%+</span>.
+        </p>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3"> Visual tokens are redundant in MLLMs.</h2>
+      </div>
+    </div>
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+
+        <p style="font-size: 20px;">
+          Left: The accuracy of the LLaVA-1.5-7B model on the GQA benchmarks varies with different percentages of retained visual tokens. The x-axis represents the percentage of original visual tokens preserved after applying 1D average pooling with varying stride sizes S applied in i-th Transformer layer. 
+
+          Right: Visual tokens receive less attention from the [ANS] token as we go deeper into its layers of LLaVA-1.5-7B model. These findings collectively suggest a significant redundancy within the visual tokens of the MLLMs.
+        </p>    
+        <div class="column is-centered ">
+      <img src="./static/images/redundancy.png"
+                class="interpolation-image"
+                alt="Interpolate start reference image."/>
+
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3"> Visual Context Compressor</h2>
+      </div>
+    </div>
+        <p style="font-size: 20px;">
+          The visual context compressor is instantialized as an average pooler applied to the visual tokens in <i>k</i>-th Transformer layer of an LLM. 
+    Formally, given the hidden visual tokens at <i>k</i>-th Transformer layer 
+    H<sub>k</sub> ∈ ℝ<sup>B×C×L</sup>, 
+    the compressor is expected to fulfill the following projection: f: ℝ<sup>B×C×L</sup> ↦ ℝ<sup>B×C×L<sub>out</sub></sup>,
+    which results in compressed visual tokens: H<sub>k</sub> ∈ ℝ<sup>B×C×L<sub>out</sub></sup>, where L<sub>out</sub> = L / S with <i>s</i> as the compression stride.</p>
+
+
+        <p style="font-size: 20px;">
+          <span class="bold"><a href="https://en.wikipedia.org/wiki/Data_compression_ratio" target="_blank">Compression Ratio (CR)</a></span>: 
+    For an LLM with <span class="math">N</span> Transformer decoder layers, the compression ratio for visual tokens can be calculated as:</p>
+    <p style="font-size: 20px; text-align: center;" class="math">
+        CR = <sup>N ⋅ L</sup>⁄<sub>((N-K) ⋅ L<sub>out</sub> + K ⋅ L)</sub>
+    </p>
+    <p style="font-size: 20px;">
+      where <span class="math">K</span> is the <span class="math">K</span>-th Transformer layer of a multi-modal LLM; <span class="math">L</span> is the length of visual tokens input into Visual Context Compressor; <span class="math">L<sub>out</sub></span> is the compressed length of visual tokens generated by Visual Context Compressor.
+    </p>
+
+
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <div class="center">
+          <img src="./static/images/compressor.png" style="width: 50%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3"> LLaVolta: A New Training Scheme</h2>
+      </div>
+    </div>
+    <p style="font-size: 20px;">
+    As depicted in the first figure, we primarily explore a three-stage training pipeline that progressively reduces the compression ratio.
+    </p>  
+    <p style="font-size: 20px;"> 
+      <span style="font-weight: bold;">Stage I: Heavy Compression</span>: The MLLM training at the first one-third of the total training iterations commences with a heavy compression ratio (> 500%), where Visual Context Compressor is applied in an early layer of the LLM with a large pooling stride. This setup enables a very fast training speed.
+    </p> 
+
+    <p style="font-size: 20px;"> 
+      <span style="font-weight: bold;">Stage II: Light Compression</span>: The MLLM continues training with another one-third of the total training epochs. At this stage, Visual Context Compressor is applied at only the deeper layers of the LLM with a smaller pooling stride compared to Training Stage I.
+    </p> 
+
+    <p style="font-size: 20px;"> 
+      <span style="font-weight: bold;">Stage III: No Compression</span>. The MLLM continues training with the final one-third of the total training epochs, following the standard MLLM training protocol without compression. Disabling compression in the final stage ensures that the number of tokens remains consistent with the original MLLM during inference, avoiding the loss of information caused by the reduction of visual tokens.
+    </p> 
+    <br><br>
+
+
+    <div class="column is-full-width">
+      <div class="content">
+        <h2 class="title is-4">Instantiation of LLaVolta</h2>
+       <div class="column is-full-width">
+        <p style="font-size: 20px;"> 
+        A family of training schemes are instantiated heree. The single-stage (non-compression) scheme is equivalent to the MLLM baseline (LLaVA). For multi-stage training, the compression stage can either go deeper or wider. <i>"deeper"</i> implies an increase in K (Transformer layer), while <i>"wider"</i> means a decrease in the stride of the pooler.
+        </p> 
+        <figure>
+        <img src="./static/images/instantiation.png"
+        class="column is-centered"
+           alt="Interpolate start reference image." />
+          </figure>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="column is-full-width">
+      <div class="content">
+        <h2 class="title is-4">Towards Efficient MLLM</h2>
+       <div class="column is-full-width">
+        <p style="font-size: 20px;"> 
+          We conduct a thorough evaluation of the multi-modal capability of LLaVolta based on LLaVA across 13 benchmarks. The following Table demonstrates that our proposed LLaVolta not only consistently lowers training costs by 16% (15.3 hours vs 12.8 hours) but also surpasses the non-compression baseline. The four-stage training schemes achieves the best performance in nine out of the thirteen benchmarks and obtains 61.9% average performance, improving LLaVA-v1.5-7B with much less overall TFLOPs and training time. This indicates the necessity of designing an optimally lite training scheme.
+          </p> 
+
+        <figure>
+        <img src="./static/images/result_llava.png"
+        class="column is-centered"
+           alt="Interpolate start reference image." />
+          </figure>
+          </div>
+      </div>
+    </div>
+
+    <div class="column is-full-width">
+      <div class="content">
+        <h2 class="title is-4">Towards Efficient Video MLLM</h2>
+       <div class="column is-full-width">
+        <p style="font-size: 20px;"> 
+          We extend our training scheme to VideoLLaVA and evaluate the results on three video-language understanding benchmarks. LLoVolta outperforms Video-LLaVA while reducing 9% training time.
+        </p> 
+
+        <figure>
+        <img src="./static/images/result_videollava.png"
+        class="column is-centered"
+           alt="Interpolate start reference image." />
+          </figure>
+          </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{chen2024llavolta,
+      title={LLaVolta: Efficient Multi-modal Models via Stage-wise Visual Context Compression},
+      author={Chen, Jieneng and Ye, Luoxin and He, Ju and Wang, Zhao-Yang and Khashabi, Daniel and Yuille, Alan},
+      journal={arXiv preprint arXiv:2406.xxx},
+      year={2024}
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This website is adapted from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license"
+            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+Commons Attribution-ShareAlike 4.0 International License</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
