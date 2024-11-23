@@ -1,8 +1,23 @@
 .paper > pre {
-    width: 100px;
+    width: 120px;
     overflow: auto;
 }
 
 hr {
     border-top: 1px solid grey;
 }
+.author {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  color: gray
+}
+<head>
+  <style>
+    h1 {
+      font-family: Arial, sans-serif;
+      font-size: 36px;
+      color: blue;
+    }
+  </style>
+</head>
+
