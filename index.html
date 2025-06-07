@@ -132,6 +132,35 @@
         font-size: 13px !important;
         margin: 5px 0 !important;
       }
+
+      /* 视频容器样式 */
+      .one {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+      }
+      
+      .one video {
+        width: 100% !important;
+        max-width: 250px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+      }
+      
+      .one::after {
+        content: '';
+        display: block;
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        margin: 0 auto;
+        background-image: url('images/genex.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        aspect-ratio: 16/9;
+      }
     }
   </style>
  <meta charset="UTF-8">
