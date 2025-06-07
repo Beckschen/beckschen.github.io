@@ -113,21 +113,39 @@ name {
   font-size: 32px;
 }
 
-.one {
+/* .one {
   width: 160px;
   height: 160px;
   position: relative;
+} */
+.one {
+  width: 230px;
+  height: auto;
+  position: left;
 }
-
+.onewider {
+  margin-left: -10px;
+  width: 250px;
+  height: auto;
+  position: left;
+}
 .two {
-  width: 160px;
-  height: 160px;
+  margin-left: -10px;
+  width: 230px;
+  height: auto;
   position: absolute;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
 }
-
+.twowider {
+  width: 250px;
+  height: auto;
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
 .fade {
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
@@ -137,3 +155,16 @@ name {
 span.highlight {
   background-color: #ffffd0;
 }
+
+.pub-image-box {
+  padding:30px;
+  width:30%;
+  vertical-align:middle
+}
+
+.pub-text-box {
+  padding:0px;
+  width:70%;
+  vertical-align:middle
+}
+

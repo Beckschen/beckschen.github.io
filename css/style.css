@@ -11,6 +11,14 @@ hr {
   font-size: 14px;
   color: gray
 }
+.navyblue {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  color: #000080
+}
+.black {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  color: #000000
+}
 <head>
   <style>
     h1 {
