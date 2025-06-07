@@ -132,35 +132,6 @@
         font-size: 13px !important;
         margin: 5px 0 !important;
       }
-
-      /* 视频容器样式 */
-      .one video {
-        display: none !important;
-      }
-      
-      .one::after {
-        content: '';
-        display: block;
-        width: 100%;
-        max-width: 250px;
-        height: auto;
-        margin: 0 auto;
-        background-image: url('images/genex.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        aspect-ratio: 16/9;
-      }
-      
-      .desktop-only {
-        display: none !important;
-      }
-      
-      .mobile-only {
-        display: block !important;
-        max-width: 250px !important;
-        margin: 0 auto !important;
-      }
     }
   </style>
  <meta charset="UTF-8">
@@ -227,9 +198,13 @@
 
 
   <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr>
         <td style="padding:10px;width:100%;vertical-align:middle">
           <heading>Recent Projects</heading>
         </td>
+      </tr>
+    </tbody>
   </table>
 
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>        
@@ -238,13 +213,9 @@
       <tr>
         <td class="pub-image-box">
           <div class="one">
-            <video class="desktop-only" width="230px" height="auto" autoplay loop muted >
+            <video width="230px" height="auto" autoplay loop muted>
               <source src="images/genex.mp4" type="video/mp4">
             </video>
-            <!-- <div class="mobile-only" style="width: 230px; padding: 10px; background: #f5f5f5; border-radius: 5px; text-align: center;">
-              <i class="fa fa-video" style="font-size: 24px; color: #666;"></i>
-              <p style="margin: 5px 0 0; font-size: 13px; color: #666;">Video demo available on desktop</p>
-            </div> -->
           </div>
         </td>
         <td class="pub-text-box">
