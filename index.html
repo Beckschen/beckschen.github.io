@@ -48,21 +48,38 @@
       .pub-image-box {
         width: 100% !important;
         text-align: center;
+        padding: 0 !important;
+        margin-bottom: 15px;
+        display: block !important;
       }
       
       .pub-text-box {
         width: 100% !important;
-        padding-left: 0 !important;
+        padding: 0 15px !important;
+        margin-bottom: 30px;
+        display: block !important;
+      }
+      
+      .onewider {
+        display: inline-block !important;
+        width: auto !important;
       }
       
       .onewider img {
         width: 100% !important;
-        max-width: 300px !important;
+        max-width: 250px !important;
         height: auto !important;
+        margin: 0 auto !important;
       }
       
       table {
         width: 100% !important;
+        display: block !important;
+      }
+      
+      tr {
+        display: block !important;
+        margin-bottom: 20px !important;
       }
       
       td[style*="width:30%"] {
@@ -82,20 +99,38 @@
         max-width: 200px !important;
       }
       
-      .pub-image-box {
-        margin-bottom: 15px;
-      }
-      
-      .pub-text-box {
-        margin-bottom: 30px;
-      }
-      
       ul {
         padding-left: 20px !important;
       }
       
       li {
         margin-bottom: 8px !important;
+      }
+
+      .papertitle {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+      }
+
+      .authors {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+      }
+
+      .conference {
+        font-size: 13px !important;
+        margin: 5px 0 !important;
+      }
+
+      .abstract {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        margin: 5px 0 !important;
+      }
+
+      .links {
+        font-size: 13px !important;
+        margin: 5px 0 !important;
       }
     }
   </style>
@@ -201,9 +236,9 @@
             Turn a single image into a 3D world adventure. Discover the magic within.
           </p>
           <p class="links">
-            <a href="https://openreview.net/pdf?id=8NlUL0Cv1L">Paper (OpenReview)</a> |
-            <a href="https://arxiv.org/pdf/2412.09624">Blog</a> |
-            <a href="https://genex.world/">Project Website</a>
+            <a href="https://openreview.net/pdf?id=8NlUL0Cv1L", class="navyblue">Paper (OpenReview)</a> |
+            <a href="https://arxiv.org/pdf/2412.09624", class="navyblue">Blog</a> |
+            <a href="https://genex.world/", class="navyblue">Project Website</a>
           </p>
         </td>
       </tr>
@@ -238,8 +273,8 @@
               <p class="abstract">
                 Envision precision medicine via generative world modeling.
               </p>
-              <a href="https://arxiv.org/pdf/2506.02327">Paper</a> | <a href="https://github.com/scott-yjyang/MeWM">Code</a> |
-                    <a href="https://yijun-yang.github.io/MeWM/">Project</a>
+              <a href="https://arxiv.org/pdf/2506.02327", class="navyblue">Paper</a> | <a href="https://github.com/scott-yjyang/MeWM", class="navyblue">Code</a> |
+                    <a href="https://yijun-yang.github.io/MeWM/", class="navyblue">Project</a>
              <br>
          </td>
       </tr>
@@ -266,7 +301,7 @@
               <p></p>
               <font color="DarkRed">CVPR, Highlight</font>, 2025.
               <br>
-              <a href="https://www.arxiv.org/pdf/2505.00788">arXiv</a>
+              <a href="https://www.arxiv.org/pdf/2505.00788", class="navyblue">arXiv</a>
               <br>
           </td>
       </tr>
@@ -294,7 +329,7 @@
               <p></p>
               <font color="DarkRed">CVPR, Highlight</font>, 2025.
               <br>
-              <a href="https://arxiv.org/pdf/2502.08636">Paper</a> | <a href="https://github.com/XingruiWang/Spatial457">Code</a> | <a href="https://huggingface.co/datasets/RyanWW/Spatial457">HuggingFace Data Card </a>
+              <a href="https://arxiv.org/pdf/2502.08636", class="navyblue">Paper</a> | <a href="https://github.com/XingruiWang/Spatial457", class="navyblue">Code</a> | <a href="https://huggingface.co/datasets/RyanWW/Spatial457", class="navyblue">HuggingFace Data Card </a>
              <br>
          </td>
       </tr>
@@ -322,9 +357,9 @@
               <p></p>
               <font color="DarkRed">NeurIPS</font>, 2024.
               <br>
-              <a href="https://arxiv.org/pdf/2406.20092">Paper</a> |
-                  <a href="https://github.com/Beckschen/LLaVolta">Code</a> |
-                    <a href="https://beckschen.github.io/llavolta.html">Project</a>
+              <a href="https://arxiv.org/pdf/2406.20092", class="navyblue">Paper</a> |
+                  <a href="https://github.com/Beckschen/LLaVolta", class="navyblue">Code</a> |
+                    <a href="https://beckschen.github.io/llavolta.html", class="navyblue">Project</a>
              <br>
          </td>
      </tr>
@@ -352,9 +387,9 @@
               <br>
               The first vision-centric design for LMM encoder, with SoTA performance on 60+ multimodal tasks in 2024.
               <br>
-              <a href="https://arxiv.org/pdf/2404.02132.pdf">Paper</a> |
-                  <a href="https://github.com/Beckschen/ViTamin">Code</a> |
-                    <a href="https://huggingface.co/jienengchen/ViTamin-XL-384px">🤗 HuggingFace</a> | <a href="https://github.com/huggingface/pytorch-image-models/blob/main/timm/models/vitamin.py">timm</a> <img src="https://img.shields.io/github/stars/huggingface/pytorch-image-models?style=social&label=Star&maxAge=2592000" alt="GitHub Stars Badge" style="margin-top: -3px; width:auto; height:16px;"> | <a href="https://github.com/mlfoundations/open_clip/blob/main/src/open_clip/model_configs/ViTamin-XL-384.json">open_clip</a> <img src="https://img.shields.io/github/stars/mlfoundations/open_clip?style=social&label=Star&maxAge=2592000" alt="GitHub Stars Badge" style="margin-top: -3px; width:auto; height:16px;">
+              <a href="https://arxiv.org/pdf/2404.02132.pdf", class="navyblue">Paper</a> |
+                  <a href="https://github.com/Beckschen/ViTamin", class="navyblue">Code</a> |
+                    <a href="https://huggingface.co/jienengchen/ViTamin-XL-384px", class="navyblue">🤗 HuggingFace</a> | <a href="https://github.com/huggingface/pytorch-image-models/blob/main/timm/models/vitamin.py", class="navyblue">timm</a> <img src="https://img.shields.io/github/stars/huggingface/pytorch-image-models?style=social&label=Star&maxAge=2592000" alt="GitHub Stars Badge" style="margin-top: -3px; width:auto; height:16px;"> | <a href="https://github.com/mlfoundations/open_clip/blob/main/src/open_clip/model_configs/ViTamin-XL-384.json", class="navyblue">open_clip</a> <img src="https://img.shields.io/github/stars/mlfoundations/open_clip?style=social&label=Star&maxAge=2592000" alt="GitHub Stars Badge" style="margin-top: -3px; width:auto; height:16px;">
               
             <br>
          </td>
@@ -392,9 +427,9 @@
                  <p></p>
                  <font color="DarkRed">Medical Image Analysis (MedIA)</font>, 2024.
                  <p></p>
-                  <a href="https://arxiv.org/pdf/2102.04306.pdf">ICML-W 2021</a> | 
-                  <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056">Journal</a> |
-                  <a href="https://github.com/Beckschen/TransUNet">Code</a> |
+                  <a href="https://arxiv.org/pdf/2102.04306.pdf", class="navyblue">ICML-W 2021</a> | 
+                  <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056", class="navyblue">Journal</a> |
+                  <a href="https://github.com/Beckschen/TransUNet", class="navyblue">Code</a> |
                   <img src="https://img.shields.io/github/stars/Beckschen/TransUNet?style=social&label=Star&maxAge=2592000" alt="GitHub Stars Badge" style="margin-top: -3px; width:auto; height:22px;"> 
                   <br>
                   Top ScienceDirect downloaded article 🏆, published all time.
