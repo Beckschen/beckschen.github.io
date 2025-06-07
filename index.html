@@ -151,6 +151,16 @@
         background-position: center;
         aspect-ratio: 16/9;
       }
+      
+      .desktop-only {
+        display: none !important;
+      }
+      
+      .mobile-only {
+        display: block !important;
+        max-width: 250px !important;
+        margin: 0 auto !important;
+      }
     }
   </style>
  <meta charset="UTF-8">
@@ -228,9 +238,13 @@
       <tr>
         <td class="pub-image-box">
           <div class="one">
-            <video width="230px" height="auto" autoplay loop muted playsinline>
+            <video class="desktop-only" width="230px" height="auto" autoplay loop muted >
               <source src="images/genex.mp4" type="video/mp4">
             </video>
+            <!-- <div class="mobile-only" style="width: 230px; padding: 10px; background: #f5f5f5; border-radius: 5px; text-align: center;">
+              <i class="fa fa-video" style="font-size: 24px; color: #666;"></i>
+              <p style="margin: 5px 0 0; font-size: 13px; color: #666;">Video demo available on desktop</p>
+            </div> -->
           </div>
         </td>
         <td class="pub-text-box">
