@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="icon" type="image/png" href="myimages/icon_jhu.jpeg">
-    <style>
+<style>
         body,
         td,
         th,
@@ -153,25 +153,107 @@
         }
 
         @media screen and (max-width: 768px) {
+            /* 保持双栏布局，但减小间距 */
             .two-column {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+                padding: 0 10px;
             }
 
+            /* 保持箭头容器双栏 */
             .arrow-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+                margin: -60px 10px 0px 10px;
             }
             
+            /* 调整字体大小以适应小屏幕 */
             body, td, th, tr, p, a {
-                font-size: 14px;
+                font-size: 13px;
             }
             
             name {
-                font-size: 28px;
+                font-size: 24px;
             }
             
             heading {
-                font-size: 20px;
+                font-size: 18px;
+            }
+
+            .block-title {
+                font-size: 14px;
+            }
+
+            .research-block {
+                padding: 12px;
+            }
+
+            /* 调整内部文字大小 */
+            .research-block div[style*="font-size: 14px"] {
+                font-size: 12px !important;
+            }
+
+            .research-block div[style*="font-size: 13px"] {
+                font-size: 11px !important;
+            }
+
+            .research-block span[style*="font-size: 12px"] {
+                font-size: 10px !important;
+            }
+
+            /* 调整箭头大小 */
+            .arrow-icon {
+                font-size: 28px;
+            }
+
+            .research-block div[style*="font-size: 32px"] {
+                font-size: 24px !important;
+            }
+
+            /* 调整内部框的padding */
+            .research-block > div[style*="padding: 15px"] {
+                padding: 10px !important;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+
+        /* 针对超小屏幕（如iPhone SE）的额外优化 */
+        @media screen and (max-width: 400px) {
+            .two-column {
+                gap: 10px;
+                padding: 0 5px;
+            }
+
+            .arrow-container {
+                gap: 10px;
+                margin: -50px 5px 0px 5px;
+            }
+
+            .research-block {
+                padding: 10px;
+            }
+
+            .block-title {
+                font-size: 13px;
+            }
+
+            .research-block div[style*="font-size: 14px"] {
+                font-size: 11px !important;
+            }
+
+            .research-block div[style*="font-size: 13px"] {
+                font-size: 10px !important;
+            }
+
+            .research-block span[style*="font-size: 12px"] {
+                font-size: 9px !important;
+            }
+
+            br {
+                display: none;
             }
         }
     </style>
