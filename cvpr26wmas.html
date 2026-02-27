@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVPR 2026 Workshop - World Models Meet Active Sensing and Closed-Loop Planning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        html { scroll-behavior: smooth; }
+        
+        :root {
+            --sky-blue: #1e90ff;
+            --mountain-brown: #8b6f47;
+            --golden: #f59e0b;
+            --grass-green: #84cc16;
+            --sunset: #ff6b35;
+        }
+        
+        .bg-sky-gradient {
+            background: linear-gradient(135deg, #87ceeb 0%, #e0f6ff 50%, #fff9c4 100%);
+        }
+        
+        .mountain-divider {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mountain-divider::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to bottom, rgba(139, 111, 71, 0.3) 0%, rgba(139, 111, 71, 0.1) 100%);
+            clip-path: polygon(0 50%, 5% 45%, 10% 48%, 15% 40%, 20% 45%, 25% 35%, 30% 42%, 35% 38%, 40% 45%, 45% 35%, 50% 40%, 55% 32%, 60% 42%, 65% 38%, 70% 48%, 75% 42%, 80% 50%, 85% 45%, 90% 52%, 95% 46%, 100% 55%, 100% 100%, 0 100%);
+        }
+        
+        .sensor-ring {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .sensor-ring::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border: 2px solid var(--sky-blue);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+        
+        .feedback-arrow {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .feedback-arrow::after {
+            content: '↻';
+            font-size: 1.5em;
+            color: var(--sunset);
+        }
+        
+        .cloud {
+            position: relative;
+            display: inline-block;
+            color: var(--sky-blue);
+        }
+        
+        .accent-golden {
+            color: var(--golden);
+        }
+        
+        .accent-grass {
+            color: var(--grass-green);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+<!-- Navigation with sky background -->
+<nav class="fixed top-0 w-full z-50 bg-gradient-to-b from-sky-400/95 to-transparent backdrop-blur border-b border-sky-200/50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-sky-900">WMAS</h1>
+        <div class="flex gap-6 text-sm text-sky-900">
+            <a href="#about" class="hover:text-sky-600 transition font-medium">about</a>
+            <a href="#speakers" class="hover:text-sky-600 transition font-medium">speakers</a>
+            <a href="#schedule" class="hover:text-sky-600 transition font-medium">schedule</a>
+            <a href="#submit" class="hover:text-sky-600 transition font-medium">submit</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero with Sky Background -->
+<section class="bg-sky-gradient pt-32 pb-20 px-6 mountain-divider relative">
+    <div class="max-w-6xl mx-auto">
+        <div class="mb-8">
+            <div class="flex items-center gap-2 mb-4">
+                <span class="text-sm text-sky-800 font-semibold">Denver, Colorado • June 3-4, 2026</span>
+            </div>
+            <h1 class="text-6xl md:text-7xl font-bold mt-4 leading-relaxed text-sky-900">
+                <div>World Models</div>
+                <div class="mt-2">
+                    <span>Meet </span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-yellow-400 to-lime-400">
+                        Active Sensing
+                    </span>
+                </div>
+                <div class="mt-2">
+                    and 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 via-green-400 to-blue-500">
+                        Closed-Loop Planning
+                    </span>
+                </div>
+            </h1>
+            <p class="text-xl text-sky-800 mt-4 max-w-3xl">
+                From passive generation to interactive agents that strategically decide what to sense, when to sense, and how to act.
+            </p>
+        </div>
+        <div class="flex gap-4 mt-8">
+            <a href="#submit" class="px-6 py-3 bg-gradient-to-r from-sky-600 to-sky-500 text-white rounded-lg hover:shadow-lg transition font-semibold">
+                submit paper
+            </a>
+            <a href="#schedule" class="px-6 py-3 bg-white border-2 border-sky-400 text-sky-700 rounded-lg hover:bg-sky-50 transition font-semibold">
+                view schedule
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section with active sensing concept -->
+<section id="about" class="py-20 px-6 bg-gradient-to-b from-blue-50 to-white">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl font-bold mb-4 text-sky-900">the vision</h2>
+        <p class="text-xl text-gray-600 mb-12 max-w-3xl">
+            Generative models have mastered passive generation. But real intelligence is <span class="font-bold text-sky-700">active</span>. It observes, plans, acts, and learns from feedback.
+        </p>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Active Sensing Card -->
+            <div class="p-8 rounded-lg bg-gradient-to-br from-sky-50 to-blue-50 border-2 border-sky-300">
+                <h3 class="font-bold text-lg mb-3 text-sky-900">Active Sensing</h3>
+                <p class="text-gray-700">
+                    Models that strategically choose what to observe—optimal viewpoints, sensor placement, information seeking.
+                </p>
+            </div>
+            
+            <!-- Closed-Loop Planning Card -->
+            <div class="p-8 rounded-lg bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-orange-300">
+                <h3 class="font-bold text-lg mb-3 text-orange-900">Closed-Loop Planning</h3>
+                <p class="text-gray-700">
+                    Continuous replanning based on new observations. Perception and action form a tight feedback loop.
+                </p>
+            </div>
+            
+            <!-- Embodied Intelligence Card -->
+            <div class="p-8 rounded-lg bg-gradient-to-br from-green-50 to-lime-50 border-2 border-green-400">
+                <h3 class="font-bold text-lg mb-3 text-green-900">Embodied Intelligence</h3>
+                <p class="text-gray-700">
+                    Agents that learn through interaction. Active decision-making transforms passive models into interactive systems.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Speakers with mountain aesthetic -->
+<section id="speakers" class="py-20 px-6 bg-white relative">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl font-bold mb-4 text-sky-900">speakers</h2>
+        <p class="text-gray-600 mb-12 text-sm">Leading voices in vision, robotics, and embodied AI</p>
+        
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="text-center group">
+                <div class="w-32 h-32 rounded-full mx-auto mb-4 group-hover:shadow-lg transition overflow-hidden">
+                    <img src="./workshops/YannisAloimonos.jpg" alt="Yiannis Aloimonos" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-semibold text-lg">Yiannis Aloimonos</h3>
+                <p class="text-sm text-gray-500">University of Maryland</p>
+            </div>
+            <div class="text-center group">
+                <div class="w-32 h-32 rounded-full mx-auto mb-4 group-hover:shadow-lg transition overflow-hidden">
+                    <img src="./workshops/ChelseaFinn.jpg" alt="Chelsea Finn" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-semibold text-lg">Chelsea Finn</h3>
+                <p class="text-sm text-gray-500">Stanford University</p>
+            </div>
+            <div class="text-center group">
+                <div class="w-32 h-32 rounded-full mx-auto mb-4 group-hover:shadow-lg transition overflow-hidden">
+                    <img src="./workshops/CKarenLiu.jpg" alt="C. Karen Liu" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-semibold text-lg">C. Karen Liu</h3>
+                <p class="text-sm text-gray-500">Stanford University</p>
+            </div>
+            <div class="text-center group">
+                <div class="w-32 h-32 rounded-full mx-auto mb-4 group-hover:shadow-lg transition overflow-hidden">
+                    <img src="./workshops/JitendraMalik.jpg" alt="Jitendra Malik" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-semibold text-lg">Jitendra Malik</h3>
+                <p class="text-sm text-gray-500">UC Berkeley</p>
+            </div>
+            <div class="text-center group">
+                <div class="w-32 h-32 rounded-full mx-auto mb-4 group-hover:shadow-lg transition overflow-hidden">
+                    <img src="./workshops/NicholasRoy.jpg" alt="Nicholas Roy" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-semibold text-lg">Nicholas Roy</h3>
+                <p class="text-sm text-gray-500">MIT CSAIL</p>
+            </div>
+        </div>
+        <p class="text-xs text-gray-400 text-center">* listed alphabetically by last name</p>
+    </div>
+</section>
+
+<!-- Schedule with time-of-day styling -->
+<section id="schedule" class="py-20 px-6 bg-gradient-to-b from-sky-50 to-white">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl font-bold mb-12 text-sky-900">half-day workshop • 8am–12pm</h2>
+        
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="flex gap-6 items-start py-4 px-4 rounded-lg hover:bg-sky-50 transition border-l-4 border-sky-400">
+                <div class="text-sm font-mono font-bold text-sky-700 min-w-16">08:00</div>
+                <div class="flex-1"><p class="font-semibold">Opening Welcome & Introductions</p><p class="text-xs text-gray-500">10 min</p></div>
+            </div>
+            
+            <div class="flex gap-6 items-start py-4 px-4 rounded-lg hover:bg-amber-50 transition border-l-4 border-amber-400">
+                <div class="text-sm font-mono font-bold text-amber-700 min-w-16">08:10</div>
+                <div class="flex-1"><p class="font-semibold">Invited Talk: Speaker 1</p><p class="text-xs text-gray-500">30 min</p></div>
+            </div>
+            
+            <div class="flex gap-6 items-start py-4 px-4 rounded-lg hover:bg-orange-50 transition border-l-4 border-orange-400">
+                <div class="text-sm font-mono font-bold text-orange-700 min-w-16">08:45</div>
+                <div class="flex-1"><p class="font-semibold">Invited Talk: Speaker 2</p><p class="text-xs text-gray-500">30 min</p></div>
+            </div>
+            
+            <div class="flex gap-6 items-start py-4 px-4 rounded-lg hover:bg-amber-50 transition border-l-4 border-amber-300">
+                <div class="text-sm font-mono font-bold text-amber-600 min-w-16">09:20</div>
+                <div class="flex-1"><p class="font-semibold italic">☕ Coffee Break</p><p class="text-xs text-gray-500">15 min</p></div>
+            </div>
+            
+            <div class="flex gap-6 items-start py-4 px-4 rounded-lg hover:bg-green-50 transition border-l-4 border-green-400">
+                <div class="text-sm font-mono font-bold text-green-700 min-w-16">09:35</div>
+                <div class="flex-1"><p class="font-semibold">Invited Talk: Speaker 3</p><p class="text-xs text-gray-500">30 min</p></div>
+            </div>
+            
+            <div class="flex gap-6 items-start py-4 px-4 rounded-lg hover:bg-lime-50 transition border-l-4 border-lime-400">
+                <div class="text-sm font-mono font-bold text-lime-700 min-w-16">10:10</div>
+                <div class="flex-1"><p class="font-semibold">Invited Talk: Speaker 4</p><p class="text-xs text-gray-500">30 min</p></div>
+            </div>
+            
+            <div class="flex gap-6 items-start py-4 px-4 rounded-lg hover:bg-yellow-50 transition border-l-4 border-yellow-400">
+                <div class="text-sm font-mono font-bold text-yellow-700 min-w-16">10:45</div>
+                <div class="flex-1"><p class="font-semibold">Invited Talk: Speaker 5</p><p class="text-xs text-gray-500">30 min</p></div>
+            </div>
+            
+            <div class="flex gap-6 items-start py-4 px-4 rounded-lg hover:bg-red-50 transition border-l-4 border-red-400">
+                <div class="text-sm font-mono font-bold text-red-700 min-w-16">11:20</div>
+                <div class="flex-1">
+                    <p class="font-semibold">Panel Discussion</p>
+                    <p class="text-xs text-gray-600 mt-1">Ranjay Krishna (UW & AI2), Amir Bar (Meta), Yilun Du (Harvard)</p>
+                </div>
+            </div>
+            
+            <div class="flex gap-6 items-start py-4 px-4 rounded-lg hover:bg-purple-50 transition border-l-4 border-purple-400">
+                <div class="text-sm font-mono font-bold text-purple-700 min-w-16">12:00</div>
+                <div class="flex-1"><p class="font-semibold">Closing Remarks</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Submit Section -->
+<section id="submit" class="py-20 px-6 bg-gradient-to-br from-sky-100 to-blue-50">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl font-bold mb-12 text-sky-900">submit your work</h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+            <div class="p-8 rounded-lg bg-white border-2 border-yellow-400 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-xl mb-3">Call for Papers</h3>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Submit 4-page short or 8-page long papers on world models, active sensing, embodied planning, and related topics. Non-archival, so work in progress is welcome.
+                </p>
+                <p class="text-sm text-gray-500 mb-4">
+                    <strong>Deadline:</strong> March 27, 2026<br/>
+                    <strong>Notifications:</strong> April 15, 2026
+                </p>
+                <a href="#" class="inline-block px-6 py-3 mt-4 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition transform">
+                    submit a paper
+                </a>
+            </div>
+            
+            <div class="p-8 rounded-lg bg-white border-2 border-gray-400 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-xl mb-3">Challenge</h3>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Benchmark your world models on active embodied tasks. Four tracks: Active Recognition, Embodied QA, Image-Goal Navigation, Robotic Manipulation.
+                </p>
+                <p class="text-sm text-gray-500 mb-4">
+                    <strong>Deadline:</strong> May 28, 2026<br/>
+                    <strong>Awards:</strong> Compute credits, best paper prizes
+                </p>
+                <a href="#" class="inline-block px-6 py-3 mt-4 bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition transform">
+                    challenge (TBD)
+                </a>
+                
+                <!-- Benchmark -->
+                <div class="mt-8 pt-8 border-t border-gray-200">
+                    <p class="text-sm text-gray-600 mb-2">Try our benchmark</p>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">
+                        <a href="https://world-in-world.github.io/" target="_blank" class="hover:text-blue-600 transition underline">
+                            world-in-world
+                        </a>
+                    </h4>
+                    <p class="text-xs text-gray-600 font-semibold">
+                        ICLR 2026 Oral
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Organizers -->
+<section class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl font-bold mb-4 text-sky-900">organizers</h2>
+        <p class="text-sm text-gray-500 mb-12">listed alphabetically by last name</p>
+        
+        <div class="grid md:grid-cols-3 gap-4 mb-12">
+            <div class="p-4 rounded-lg bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-200">
+                <p class="font-semibold text-sky-900">Rama Chellappa</p>
+                <p class="text-sm text-gray-600">JHU</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200">
+                <p class="font-semibold text-orange-900">Jieneng Chen</p>
+                <p class="text-sm text-gray-600">JHU</p>
+                <p class="text-xs text-blue-600 font-medium">Contact Person</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gradient-to-br from-green-50 to-lime-50 border border-green-200">
+                <p class="font-semibold text-green-900">Yilun Du</p>
+                <p class="text-sm text-gray-600">Harvard</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gradient-to-br from-red-50 to-pink-50 border border-red-200">
+                <p class="font-semibold text-red-900">Sanjeev Khudanpur</p>
+                <p class="text-sm text-gray-600">JHU</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200">
+                <p class="font-semibold text-purple-900">Cheng Peng</p>
+                <p class="text-sm text-gray-600">University of Virginia</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200">
+                <p class="font-semibold text-cyan-900">Tianmin Shu</p>
+                <p class="text-sm text-gray-600">JHU</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gradient-to-br from-teal-50 to-green-50 border border-teal-200">
+                <p class="font-semibold text-teal-900">Chen Wei</p>
+                <p class="text-sm text-gray-600">Rice University</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gradient-to-br from-yellow-50 to-amber-50 border border-yellow-200">
+                <p class="font-semibold text-amber-900">Jianwen Xie</p>
+                <p class="text-sm text-gray-600">Lambda</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200">
+                <p class="font-semibold text-orange-900">Alan Yuille</p>
+                <p class="text-sm text-gray-600">JHU</p>
+            </div>
+        </div>
+        
+        <div class="pt-8 border-t border-gray-200">
+            <h3 class="font-bold text-sky-900 mb-4">Challenge Committee</h3>
+            <div class="grid md:grid-cols-2 gap-4 max-w-sm">
+                <div class="p-4 rounded-lg bg-sky-50 border border-sky-200">
+                    <p class="font-semibold">Jieneng Chen</p>
+                    <p class="text-sm text-gray-600">JHU</p>
+                </div>
+                <div class="p-4 rounded-lg bg-orange-50 border border-orange-200">
+                    <p class="font-semibold">Jiahan Zhang</p>
+                    <p class="text-sm text-gray-600">JHU</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact & Footer -->
+<section class="py-20 px-6 bg-gradient-to-b from-sky-50 to-white">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-sky-900">get in touch</h2>
+        <div class="max-w-2xl">
+            <p class="text-lg text-gray-700 mb-6">
+                Questions about the workshop, submissions, or anything else? Reach out to our contact person.
+            </p>
+            <a href="mailto:jchen293@jh.edu" class="inline-flex items-center gap-3 text-lg font-semibold text-sky-600 hover:text-sky-700">
+                Jieneng Chen • jchen293@jh.edu
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="py-12 px-6 bg-sky-900 text-sky-100 text-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-start">
+        <div>
+            <p class="font-bold text-lg mb-2">WMAS 2026</p>
+            <p>World Models Meet Active Sensing & Closed-Loop Planning</p>
+            <p class="text-xs text-sky-300 mt-2">June 3-4 • Colorado Convention Center • Denver, CO</p>
+        </div>
+        <div class="text-right text-xs text-sky-200">
+            <p class="font-semibold mb-2">Organizers</p>
+            <p>Rama Chellappa • Jieneng Chen • Yilun Du</p>
+            <p>Cheng Peng • Tianmin Shu • Chen Wei</p>
+            <p>Jianwen Xie • Alan Yuille</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
