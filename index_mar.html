@@ -1,0 +1,725 @@
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-7580334-2');
+  </script>
+
+  <title>Jieneng Chen</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+  <meta name="author" content="Jieneng Chen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="myimages/icon_jhu.jpeg">
+  <!-- Google Fonts: Syne & DM Mono for banner -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+  /* ── Base ──────────────────────────────────────────── */
+  body, td, th, tr, p, a {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #222;
+  }
+  body { background: #fff; margin: 0; padding: 0; }
+
+  a { color: #1a0dab; text-decoration: none; }
+  a:hover { color: #d33; text-decoration: underline; }
+
+  name {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 28px; font-weight: 700; color: #111;
+  }
+  heading {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 18px; font-weight: 700; color: #111;
+    display: inline-block;
+    border-bottom: 2px solid #111;
+    padding-bottom: 3px;
+  }
+  papertitle {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 15px; font-weight: 700; color: #111;
+  }
+  .author {
+    font-size: 13px; color: #555;
+  }
+  smaller {
+    font-size: 14px; color: #666;
+  }
+
+  /* ── Layout ────────────────────────────────────────── */
+  .outer { width: 100%; max-width: 900px; border: 0; border-spacing: 0; border-collapse: separate; margin: 0 auto; }
+
+  /* ── Section spacing ───────────────────────────────── */
+  .section-heading { padding: 24px 10px 4px 10px; }
+
+  /* ── News / Awards / Talks lists ───────────────────── */
+  ul.clean {
+    list-style: none; padding-left: 18px; margin: 6px 0 0 0;
+  }
+  ul.clean li {
+    margin-bottom: 5px; padding-left: 14px; position: relative; line-height: 1.55;
+  }
+  ul.clean li::before {
+    content: '–'; position: absolute; left: 0; color: #999;
+  }
+  .meta { color: #888; font-size: 13px; }
+
+  /* ── Research pillars ──────────────────────────────── */
+  .pillars {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    max-width: 880px; margin: 12px auto 0; padding: 0 10px;
+  }
+  .pillar {
+    border: 1px solid #ddd; padding: 16px 18px; background: #fafafa;
+  }
+  .pillar-title { font-weight: 700; font-size: 14px; margin-bottom: 8px; color: #111; }
+  .pillar-body { font-size: 13px; line-height: 1.6; color: #444; }
+  .pillar-body a { font-size: 13px; }
+
+  .foundation {
+    border: 1px solid #ddd; padding: 16px 18px; background: #fafafa;
+    max-width: 880px; margin: 20px auto 0; padding: 16px 18px;
+  }
+  .foundation .pillar-body { columns: 2; column-gap: 30px; }
+
+  .arrow-row {
+    text-align: center; margin: 10px 0 0 0; color: #bbb; font-size: 22px; letter-spacing: 12px;
+  }
+
+  /* ── Publications table ────────────────────────────── */
+  .pub-image-box { padding: 20px 20px 20px 10px; width: 25%; vertical-align: top; }
+  .pub-text-box  { padding: 12px 0; width: 75%; vertical-align: top; }
+  .pub-image-box img, .pub-image-box video { width: 200px; height: auto; }
+  .conference { margin: 2px 0; }
+  .abstract { margin: 2px 0; color: #555; font-size: 14px; }
+  .links { margin: 4px 0; }
+
+  /* ── Mentee list ───────────────────────────────────── */
+  ul.mentees { padding-left: 20px; }
+  ul.mentees li { margin-bottom: 10px; line-height: 1.5; }
+  ul.mentees .note { color: #666; font-size: 13px; }
+
+  /* ── Responsive ────────────────────────────────────── */
+  @media screen and (max-width: 768px) {
+    .pillars { grid-template-columns: 1fr; }
+    .foundation .pillar-body { columns: 1; }
+    .pub-image-box { display: none; }
+    .pub-text-box { width: 100%; padding: 10px; }
+    name { font-size: 22px; }
+    heading { font-size: 16px; }
+  }
+
+  /* ══════════════════════════════════════════════════════
+     RESEARCH BANNER STYLES
+  ══════════════════════════════════════════════════════ */
+  :root {
+    --c-genex:   #0d9488;
+    --c-causal:  #d97706;
+    --c-wiw:     #7c3aed;
+    --c-mewm:    #db2777;
+    --c-spatial: #2563eb;
+  }
+
+  .research-strip {
+    background: #fff;
+    border-top: 1.5px solid rgba(0,0,0,.10);
+    border-bottom: 1.5px solid rgba(0,0,0,.10);
+    overflow: hidden;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    margin: 4px 0 16px 0;
+    width: 1058px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .research-strip::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2.5px;
+    background: linear-gradient(90deg,
+      var(--c-genex) 0%, var(--c-causal) 25%,
+      var(--c-wiw) 50%, var(--c-mewm) 75%, var(--c-spatial) 100%);
+    background-size: 200% 100%;
+    animation: rs-shimmer 7s linear infinite;
+    z-index: 20;
+  }
+  @keyframes rs-shimmer { to { background-position: 200% 0; } }
+
+  .rs-label {
+    position: absolute; left: 0; top: 0; bottom: 0; z-index: 10;
+    display: flex; align-items: center;
+    padding: 0 14px 0 12px;
+    background: #fff;
+    border-right: 1px solid rgba(0,0,0,.08);
+    white-space: nowrap;
+  }
+  .rs-label span {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 9px;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: #999;
+  }
+  .rs-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--c-genex); margin-right: 8px;
+    animation: rs-pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes rs-pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50%      { opacity:.3; transform:scale(.6); }
+  }
+
+  .rs-fade-l, .rs-fade-r {
+    position: absolute; top: 0; bottom: 0; width: 40px;
+    z-index: 5; pointer-events: none;
+  }
+  .rs-fade-l { left: 88px;  background: linear-gradient(to right, #fff, transparent); }
+  .rs-fade-r { right: 0;    background: linear-gradient(to left,  #fff, transparent); }
+
+  .rs-viewport {
+    overflow: hidden;
+    margin-left: 88px;
+    width: 970px;
+  }
+  .rs-track {
+    display: flex; gap: 10px; padding: 12px 0;
+    width: max-content;
+    animation: rs-scroll 42s linear infinite;
+  }
+  .rs-track:hover { animation-play-state: paused; }
+  @keyframes rs-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .rs-card {
+    width: 186px; flex-shrink: 0;
+    background: #f9fafb;
+    border: 1.5px solid rgba(0,0,0,.07);
+    border-radius: 10px; overflow: hidden;
+    text-decoration: none;
+    display: flex; flex-direction: column;
+    transition: border-color .25s, transform .25s, box-shadow .25s;
+  }
+  .rs-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--ac);
+    box-shadow: 0 8px 24px rgba(0,0,0,.09),
+                0 0 0 3px color-mix(in srgb, var(--ac) 10%, transparent);
+  }
+  .rs-card[data-p="wiw"]     { --ac:var(--c-wiw);     --ab:#f5f3ff; --ad:#ddd6fe; }
+  .rs-card[data-p="genex"]   { --ac:var(--c-genex);   --ab:#f0fdfb; --ad:#ccfbf1; }
+  .rs-card[data-p="causal"]  { --ac:var(--c-causal);  --ab:#fffbeb; --ad:#fde68a; }
+  .rs-card[data-p="mewm"]    { --ac:var(--c-mewm);    --ab:#fdf2f8; --ad:#fbcfe8; }
+  .rs-card[data-p="spatial"] { --ac:var(--c-spatial); --ab:#eff6ff; --ad:#bfdbfe; }
+
+  .rs-thumb {
+    position: relative; width: 100%; height: 110px;
+    overflow: hidden; flex-shrink: 0; background: var(--ab);
+  }
+  .rs-thumb-bg    { position: absolute; inset: 0; background: var(--ab); }
+  .rs-thumb-grid  {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, var(--ad) 1.5px, transparent 1.5px);
+    background-size: 18px 18px;
+  }
+  .rs-thumb-lines { position: absolute; inset: 0; overflow: hidden; opacity: .4; }
+  .rs-thumb-lines::before {
+    content: ''; position: absolute;
+    width: 200%; height: 200%; top: -50%; left: -50%;
+    background: repeating-linear-gradient(-45deg,
+      transparent, transparent 12px, var(--ad) 12px, var(--ad) 13px);
+  }
+  .rs-thumb-icon {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .rs-thumb-icon svg { width: 42px; height: 42px; color: var(--ac); opacity: .2; }
+
+  .rs-thumb img, .rs-thumb video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .4s, opacity .3s;
+  }
+  .rs-card:hover .rs-thumb img,
+  .rs-card:hover .rs-thumb video { transform: scale(1.05); }
+
+  .rs-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,.28);
+    backdrop-filter: blur(2px);
+    opacity: 0; transition: opacity .22s;
+  }
+  .rs-card:hover .rs-overlay { opacity: 1; }
+  .rs-play {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--ac);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--ac) 45%, transparent);
+  }
+  .rs-play svg { width: 13px; height: 13px; fill: #fff; margin-left: 2px; }
+
+  .rs-tag {
+    position: absolute; bottom: 7px; right: 7px;
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px; letter-spacing: .05em;
+    color: var(--ac);
+    background: rgba(255,255,255,.92);
+    border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
+    border-radius: 4px; padding: 2px 6px;
+  }
+
+  .rs-body {
+    padding: 8px 10px 10px;
+    border-top: 1.5px solid rgba(0,0,0,.06);
+    background: #fff; position: relative;
+  }
+  .rs-body::before {
+    content: ''; position: absolute;
+    left: 0; top: 9px; bottom: 9px;
+    width: 2.5px; border-radius: 2px;
+    background: var(--ac); opacity: .65;
+  }
+  .rs-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 12px;
+    color: #111; letter-spacing: -.01em;
+    padding-left: 10px; display: block; margin-bottom: 3px;
+  }
+  .rs-desc {
+    font-size: 10px; line-height: 1.45;
+    color: #888; font-style: italic; padding-left: 10px;
+  }
+
+  @media screen and (max-width: 480px) {
+    .research-strip { display: none; }
+  }
+</style>
+</head>
+
+<body>
+<table class="outer"><tbody>
+  <tr><td style="padding:0">
+
+    <!-- ── Bio ────────────────────────────────────────── -->
+    <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"><tbody>
+      <tr>
+        <td style="padding:2.5%;width:70%;vertical-align:middle">
+          <p style="text-align:center">
+            <name>Jieneng Chen</name><br>
+            <span style="font-size:14px;color:#555;">jchen293 [at] jh.edu</span>
+          </p>
+          <p>I received my Ph.D. in <a href="https://www.cs.jhu.edu/">Computer Science</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a> in March 2026, advised by <a href="http://www.cs.jhu.edu/~ayuille/">Alan L. Yuille</a> and <a href="https://engineering.jhu.edu/faculty/rama-chellappa/">Rama Chellappa</a>. I will spend my spring and summer at <a href="https://www.stanford.edu/">Stanford CS</a> as a postdoc.</p>
+          <p>I study intelligence in the physical world by structuring raw observations into <a href="https://arxiv.org/pdf/2603.05591">spatial code</a>. My prior work laid the foundation, spanning scalable <a href="https://arxiv.org/pdf/2404.02132.pdf">vision encoders</a> and <a href="https://arxiv.org/pdf/2510.18135">world models</a>. I am best known for <a href="https://arxiv.org/pdf/2102.04306">TransUNet</a>, which unifies local and global context and has over 10,000 citations.</p>
+          <p>I am a <a href="https://www.businesswire.com/news/home/20240920559594/en/Siebel-Scholars-Foundation-Announces-Class-of-2025">Siebel Scholar</a> for contributions to bioengineering, a Harvard <a href="https://kempnerinstitute.harvard.edu/news/announcing-2026-kempner-institute-research-fellows/">Kempner Fellow</a>, and a recipient of several best paper and young investigator awards.</p>
+          <p style="text-align:center; margin-top:12px;">
+            <a href="/cdn-cgi/l/email-protection#80eae3e8e5eeb2b9b3c0eae8aee5e4f5">Email</a> &middot;
+            <a href="./Jieneng_Chen_CV.pdf">CV</a> &middot;
+            <a href="https://scholar.google.com/citations?hl=en&user=yLYj88sAAAAJ">Scholar</a> &middot;
+            <a href="https://github.com/Beckschen">Github</a> &middot;
+            <a href="https://www.linkedin.com/in/jieneng-chen-53254011a/">LinkedIn</a>
+          </p>
+        </td>
+        <td style="padding:2.5%;width:30%;max-width:30%">
+          <img style="width:80%;max-width:80%;border-radius:8px;" alt="profile photo" src="myimages/photo.jpg">
+        </td>
+      </tr>
+    </tbody></table>
+
+    <!-- ── News ───────────────────────────────────────── -->
+    <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+      <tbody><tr><td class="section-heading"><heading>News</heading></td></tr></tbody>
+    </table>
+    <ul class="clean">
+      <li>Upcoming talks at UCSD and UVA in March 2026.</li>
+      <li>Prospective interns: Email me about the <a href="https://ccvl.jhu.edu/summer-intern-2026/">CCVL Internship Program</a>.</li>
+      <li>New paper: <a href="https://arxiv.org/pdf/2603.05591">Thinking with Spatial Code</a> — new SoTA on VSI-bench for 3D/4D reasoning.</li>
+      <li>New paper: <a href="https://arxiv.org/pdf/2601.13304">CausalSpatial</a> — benchmark and causal world model for 4D + physics reasoning.</li>
+      <li>Co-organizing the 1st CVPR 2026 workshop on <a href="https://cvpr26wmas.github.io/cvpr26wmas.html">World Models Meet Active Sensing and Embodied Planning</a>. Try our benchmark <a href="https://world-in-world.github.io/">World-in-World</a> (ICLR 2026 Oral).</li>
+      <li>Co-organizing the 4th CVPR 2026 workshop on <a href="https://generative-vision.github.io/workshop-CVPR-26/">Generative Models for Computer Vision</a>.</li>
+    </ul>
+
+    <!-- ── Awards ─────────────────────────────────────── -->
+    <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+      <tbody><tr><td class="section-heading"><heading>Awards and Honors</heading></td></tr></tbody>
+    </table>
+    <ul class="clean">
+      <li><a href="https://www.businesswire.com/news/home/20240920559594/en/Siebel-Scholars-Foundation-Announces-Class-of-2025">Siebel Scholar Award</a>, class 2025 <span class="meta">($35k)</span></li>
+      <li>MICCAI 2025 Doctoral Thesis Award</li>
+      <li>MICCAI 2025 <a href="https://miccai.org/index.php/news/2025/10/20/announcing-the-recipients-of-the-miccai-2025-best-paper-and-young-scientist-awards">Best Paper Award</a> runner-up <span class="meta">(2 / 1,027 accepted papers)</span></li>
+      <li><a href="http://beckschen.github.io/awards/kdd_healthday.jpg">Young Investigator Best Paper Award</a> — <a href="http://beckschen.github.io/awards/kdd_healthday.jpg">KDD Health Day</a>, <a href="https://cccblog.org/2025/08/18/blue-sky-track-winners-at-acm-sigkdd-2025-health-day/">CCC</a>, and NIH</li>
+      <li><a href="http://beckschen.github.io/awards/material_visionary_award.png">Visionary Award</a>, AI for Material Science</li>
+      <li>NSF Travel Award, CVPR Doctoral Consortium</li>
+      <li>PhD Thesis Completion Award, JHU Provost <span class="meta">($32k)</span></li>
+      <li>RSNA 2025 Certificate of Merit <span class="meta">(16 / 1,951)</span></li>
+      <li><a href="https://www.daad.de/en/the-daad/postdocnet/fellows/fellows/">DAAD AInet Fellowship</a></li>
+      <li><a href="https://kempnerinstitute.harvard.edu/news/announcing-2026-kempner-institute-research-fellows/">Kempner Research Fellowship</a>, Harvard <span class="meta">(up to $300k)</span></li>
+      <li>NVIDIA 2025 Academic Grant <span class="meta">($100k compute)</span></li>
+      <li>#1 most downloaded article on ScienceDirect; among the most cited in MedIA</li>
+      <li>#1 most cited among all ECCV publications in past five years (Google Metrics)</li>
+    </ul>
+
+    <!-- ── Mentorship Highlight ───────────────────────── -->
+    <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+      <tbody><tr><td class="section-heading"><heading>Mentorship</heading></td></tr></tbody>
+    </table>
+    <ul class="clean">
+      <li>Mentee's paper selected for Oral at ICLR 2026 (top 1% of submissions). Congrats, <a href="https://me.jiahanzhang.top/">Jiahan</a>!</li>
+      <li>Undergraduate mentee finalist (1 of 24) for <a href="https://cra.org/about/awards/outstanding-undergraduate-researcher-award/#tab-id-2">CRA Outstanding Undergraduate Researcher Award</a>. Congrats, <a href="https://taiminglu.com/">TaiMing</a>!</li>
+      <li>Undergraduate mentee wins <a href="https://hour.jhu.edu/opportunities/pura/">Provost's Undergraduate Research Award</a> ($6k). Congrats, <a href="https://ardauzunoglu.github.io/">Arda</a>!</li>
+      <li>Undergraduate mentee received Honorable Mention for <a href="https://cra.org/about/awards/outstanding-undergraduate-researcher-award/">Outstanding Undergraduate Researcher Award</a>. Congrats, <a href="https://ardauzunoglu.github.io/">Arda</a>!</li>
+      <li>Undergraduate mentee won <a href="https://www.cs.jhu.edu/news/celebrating-the-2025-department-and-school-awardees/">Michael J. Muuss Research Award</a>. Congrats, <a href="https://taiminglu.com/">TaiMing</a>!</li>
+    </ul>
+
+    <!-- ── Recent Projects ────────────────────────────── -->
+    <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+      <tbody><tr><td class="section-heading"><heading>Recent Projects</heading></td></tr></tbody>
+    </table>
+    <p style="padding:0 10px;"><smaller>Publications from the past two years. Full list on <a href="https://scholar.google.com/citations?hl=en&user=yLYj88sAAAAJ">Google Scholar</a>.</smaller></p>
+
+    <!-- ══════════════════════════════════════════════
+         RESEARCH BANNER
+    ══════════════════════════════════════════════ -->
+    <div class="research-strip" role="marquee" aria-label="Research highlights">
+      <div class="rs-label"><span class="rs-dot"></span><span>Research Highlights</span></div>
+      <div class="rs-fade-l" aria-hidden="true"></div>
+      <div class="rs-fade-r" aria-hidden="true"></div>
+
+      <div class="rs-viewport">
+        <div class="rs-track">
+
+          <!-- ── SET A ─────────────────────────────── -->
+
+          <a class="rs-card" data-p="wiw" href="https://world-in-world.github.io/" target="_blank">
+            <div class="rs-thumb">
+              <div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div>
+              <div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
+              <img src="images/world-in-world.png" alt="World-in-World" onerror="this.style.display='none'">
+              <div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div>
+              <span class="rs-tag">ICLR'26 Oral</span>
+            </div>
+            <div class="rs-body">
+              <span class="rs-name">World-in-World</span>
+              <p class="rs-desc">Closed-loop world model — generation, perception &amp; action in the physical world.</p>
+            </div>
+          </a>
+
+          <a class="rs-card" data-p="genex" href="https://genex.world/" target="_blank">
+            <div class="rs-thumb">
+              <div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div>
+              <div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+              <video autoplay muted loop playsinline onerror="this.style.display='none'">
+                <source src="images/genex.mp4" type="video/mp4">
+              </video>
+              <div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div>
+              <span class="rs-tag">ICLR'25</span>
+            </div>
+            <div class="rs-body">
+              <span class="rs-name">GenEx</span>
+              <p class="rs-desc">Turn a single image into an explorable 3D world. Agents navigate generated environments.</p>
+            </div>
+          </a>
+
+          <a class="rs-card" data-p="causal" href="https://arxiv.org/pdf/2601.13304" target="_blank">
+            <div class="rs-thumb">
+              <div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div>
+              <div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 12h6M15.5 7.5l-6 4M15.5 16.5l-6-4"/></svg></div>
+              <img src="images/causalspatial.png" alt="CausalSpatial" onerror="this.style.display='none'">
+              <div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div>
+              <span class="rs-tag">arXiv'26</span>
+            </div>
+            <div class="rs-body">
+              <span class="rs-name">CausalSpatial</span>
+              <p class="rs-desc">Object-centric causal spatial reasoning benchmark with physics-aware world model evaluation.</p>
+            </div>
+          </a>
+
+          <a class="rs-card" data-p="mewm" href="https://yijun-yang.github.io/MeWM/" target="_blank">
+            <div class="rs-thumb">
+              <div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div>
+              <div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+              <video autoplay muted loop playsinline onerror="this.style.display='none'">
+                <source src="images/mewm-480p.mov" type="video/mp4">
+              </video>
+              <div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div>
+              <span class="rs-tag">ICCV'25</span>
+            </div>
+            <div class="rs-body">
+              <span class="rs-name">MeWM</span>
+              <p class="rs-desc">Medical World Model — generative tumor evolution simulation for personalised treatment planning.</p>
+            </div>
+          </a>
+
+          <a class="rs-card" data-p="spatial" href="https://openaccess.thecvf.com/content/CVPR2025/papers/Ma_SpatialLLM_A_Compound_3D-Informed_Design_towards_Spatially-Intelligent_Large_Multimodal_Models_CVPR_2025_paper.pdf" target="_blank">
+            <div class="rs-thumb">
+              <div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div>
+              <div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+              <img src="images/spatialllm.png" alt="SpatialLLM" onerror="this.style.display='none'">
+              <div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div>
+              <span class="rs-tag">CVPR'25 Highlight</span>
+            </div>
+            <div class="rs-body">
+              <span class="rs-name">SpatialLLM</span>
+              <p class="rs-desc">Compound 3D-informed design for spatially-intelligent large multimodal models.</p>
+            </div>
+          </a>
+
+          <!-- ── SET B — duplicate for seamless loop ── -->
+
+          <a class="rs-card" data-p="wiw" href="https://world-in-world.github.io/" target="_blank">
+            <div class="rs-thumb"><div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div><div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div><img src="images/world-in-world.png" alt="" onerror="this.style.display='none'"><div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div><span class="rs-tag">ICLR'26 Oral</span></div>
+            <div class="rs-body"><span class="rs-name">World-in-World</span><p class="rs-desc">Closed-loop world model — generation, perception &amp; action in the physical world.</p></div>
+          </a>
+
+          <a class="rs-card" data-p="genex" href="https://generative-world-explorer.github.io/" target="_blank">
+            <div class="rs-thumb"><div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div><div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><video autoplay muted loop playsinline onerror="this.style.display='none'"><source src="images/genex.mp4" type="video/mp4"></video><div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div><span class="rs-tag">ICLR '25</span></div>
+            <div class="rs-body"><span class="rs-name">GenEx</span><p class="rs-desc">Turn a single image into an explorable 3D world. Agents navigate generated environments.</p></div>
+          </a>
+
+          <a class="rs-card" data-p="causal" href="https://arxiv.org/pdf/2601.13304" target="_blank">
+            <div class="rs-thumb"><div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div><div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 12h6M15.5 7.5l-6 4M15.5 16.5l-6-4"/></svg></div><img src="images/causalspatial.png" alt="" onerror="this.style.display='none'"><div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div><span class="rs-tag">ICLR'26 WM</span></div>
+            <div class="rs-body"><span class="rs-name">CausalSpatial</span><p class="rs-desc">Object-centric causal spatial reasoning benchmark with physics-aware world model evaluation.</p></div>
+          </a>
+
+          <a class="rs-card" data-p="mewm" href="https://yijun-yang.github.io/MeWM/" target="_blank">
+            <div class="rs-thumb"><div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div><div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><video autoplay muted loop playsinline onerror="this.style.display='none'"><source src="images/mewm-480p.mov" type="video/mp4"></video><div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div><span class="rs-tag">ICCV '25</span></div>
+            <div class="rs-body"><span class="rs-name">MeWM</span><p class="rs-desc">Medical World Model — generative tumor evolution simulation for personalised treatment planning.</p></div>
+          </a>
+
+          <a class="rs-card" data-p="spatial" href="https://openaccess.thecvf.com/content/CVPR2025/papers/Ma_SpatialLLM_A_Compound_3D-Informed_Design_towards_Spatially-Intelligent_Large_Multimodal_Models_CVPR_2025_paper.pdf" target="_blank">
+            <div class="rs-thumb"><div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div><div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><img src="images/spatialllm.png" alt="" onerror="this.style.display='none'"><div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div><span class="rs-tag">CVPR'25 Highlight</span></div>
+            <div class="rs-body"><span class="rs-name">SpatialLLM</span><p class="rs-desc">Compound 3D-informed design for spatially-intelligent large multimodal models.</p></div>
+          </a>
+
+          <a class="rs-card" data-p="wiw" href="https://arxiv.org/pdf/2507.10437" target="_blank">
+            <div class="rs-thumb"><div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div><div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/></svg></div><video autoplay muted loop playsinline onerror="this.style.display='none'"><source src="images/4d-animal.mp4" type="video/mp4"></video><div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div><span class="rs-tag">WACV '26</span></div>
+            <div class="rs-body"><span class="rs-name">4D-Animal</span><p class="rs-desc">Freely reconstructing animatable 3D animals from monocular video.</p></div>
+          </a>
+
+        </div><!-- /rs-track -->
+      </div><!-- /rs-viewport -->
+    </div><!-- /research-strip -->
+    <!-- ══════════════════════════════════════════════ -->
+
+    <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"><tbody>
+
+      <tr>
+        <td class="pub-image-box"><img src='images/world-in-world.png'></td>
+        <td class="pub-text-box">
+          <a href="https://arxiv.org/pdf/2510.18135"><papertitle>World-in-World: World Models in a Closed-Loop World</papertitle></a><br>
+          <span class="author"><a href="https://arxiv.org/pdf/2510.18135" class="author">Jiahan Zhang*</a>, <a href="https://arxiv.org/pdf/2510.18135" class="author">Muqing Jiang*</a>, <a href="https://openreview.net/profile?id=~Nanru_Dai1" class="author">Nanru Dai</a>, <a href="https://taiminglu.com/" class="author">TaiMing Lu</a>, <a href="https://scholar.google.com/citations?user=5fsB_GMAAAAJ" class="author">Arda Uzunoglu</a>, <a href="https://zssc.tech/" class="author">Shunchi Zhang</a>, <a href="https://weiyana.github.io/" class="author">Yana Wei</a>, <a href="https://jiahaoplus.github.io/" class="author">Jiahao Wang</a>, <a href="https://engineering.jhu.edu/faculty/vishal-patel/" class="author">Vishal Patel</a>, <a href="https://pliang279.github.io/" class="author">Paul Liang</a>, <a href="https://danielkhashabi.com/" class="author">Daniel Khashabi</a>, <a href="https://www.zongweiz.com/" class="author">Cheng Peng</a>, <a href="https://engineering.jhu.edu/faculty/rama-chellappa/" class="author">Rama Chellappa</a>, <a href="https://www.tshu.io/" class="author">Tianmin Shu</a>, <a href="https://www.cs.jhu.edu/~ayuille/" class="author">Alan Yuille</a>, <a href="https://yilundu.github.io/" class="author">Yilun Du</a>, Jieneng Chen.</span>
+          <p class="conference"><b>ICLR</b>, 2026. <b>Oral</b> (1%).</p>
+          <p class="abstract">World models live and die by their closed-loop success, not flawless generated visuals.</p>
+          <a href="https://arxiv.org/pdf/2510.18135">Paper</a> | <a href="https://openreview.net/forum?id=yDmb7xAfeb">OpenReview</a> | <a href="https://world-in-world.github.io/">Project</a> | <a href="https://world-in-world.github.io/subpages/leaderboard.html">Leaderboard</a> | <a href="https://world-in-world.github.io/subpages/index.html">Demo</a> | <a href="https://github.com/World-In-World/world-in-world">Code</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-image-box"><video width="200" height="auto" autoplay loop muted playsinline><source src="images/genex.mp4" type="video/mp4"></video></td>
+        <td class="pub-text-box">
+          <a href="https://openreview.net/pdf?id=8NlUL0Cv1L"><papertitle>GenEx: Generating an Explorable World</papertitle></a><br>
+          <span class="author"><a href="https://taiminglu.com/" class="author">TaiMing Lu</a>, <a href="https://www.tshu.io/" class="author">Tianmin Shu</a>, <a href="https://www.cs.jhu.edu/~ayuille/" class="author">Alan Yuille</a>, <a href="https://danielkhashabi.com/" class="author">Daniel Khashabi</a>, Jieneng Chen.</span>
+          <p class="conference"><b>ICLR</b>, 2025.</p>
+          <p class="abstract">Turn a single image into a 3D world adventure. Embodied agents refine beliefs by predicting unseen parts of the physical world.</p>
+          <a href="https://hub.jhu.edu/2024/12/19/a-generated-world-of-pure-imagination/">JHU News</a> | <a href="https://openreview.net/pdf?id=8NlUL0Cv1L">Paper</a> | <a href="https://arxiv.org/pdf/2412.09624">Blog</a> | <a href="https://genex.world/">Project</a> | <a href="https://github.com/GenEx-world/genex">Code</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-image-box"><img src='images/causalspatial.png'></td>
+        <td class="pub-text-box">
+          <a href="https://arxiv.org/pdf/2601.13304"><papertitle>CausalSpatial: A Comprehensive Benchmark for Object-Centric Causal Spatial Reasoning</papertitle></a><br>
+          <span class="author"><a href="https://engineering.jhu.edu/" class="author">Wenxin Ma*</a>, <a href="https://engineering.jhu.edu/" class="author">Chenlong Wang*</a>, <a href="https://engineering.jhu.edu/" class="author">Ruisheng Yuan*</a>, <a href="https://engineering.jhu.edu/" class="author">Hao Chen</a>, <a href="https://engineering.jhu.edu/" class="author">Nanru Dai</a>, <a href="https://engineering.jhu.edu/" class="author">S. Kevin Zhou</a>, <a href="https://engineering.jhu.edu/" class="author">Yijun Yang</a>, <a href="https://engineering.jhu.edu/" class="author">Alan Yuille</a>, Jieneng Chen.</span>
+          <p class="conference"><b>ICLR</b> Workshop on World Models, 2026.</p>
+          <p class="abstract">A benchmark and early causal world model for grounded causal reasoning in space.</p>
+          <a href="https://arxiv.org/pdf/2601.13304">Paper</a> | <a href="https://huggingface.co/datasets/Mwxinnn/CausalSpatial">HuggingFace Dataset</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-image-box"><img src='images/evoworld.png'></td>
+        <td class="pub-text-box">
+          <a href="https://arxiv.org/abs/2510.01183"><papertitle>EvoWorld: Evolving Panoramic World Generation with Explicit 3D Memory</papertitle></a><br>
+          <span class="author"><a href="https://jiahaoplus.github.io/" class="author">Jiahao Wang*</a>, <a href="" class="author">Luoxin Ye*</a>, <a href="https://taiminglu.com/" class="author">TaiMing Lu</a>, <a href="https://lambert-x.github.io/" class="author">Junfei Xiao</a>, <a href="https://me.jiahanzhang.top/" class="author">Jiahan Zhang</a>, <a href="https://ethang97.github.io/" class="author">Yuxiang Guo</a>, <a href="https://aiem.jhu.edu/people/xijun-liu/" class="author">Xijun Liu</a>, <a href="https://engineering.jhu.edu/faculty/rama-chellappa/" class="author">Rama Chellappa</a>, <a href="https://sites.google.com/view/cheng-peng/" class="author">Cheng Peng</a>, <a href="https://www.cs.jhu.edu/~ayuille/" class="author">Alan Yuille</a>, Jieneng Chen.</span>
+          <p class="conference"><b>ICLR</b> Workshop on World Models, 2026.</p>
+          <p class="abstract">Bridge generative world models with 3D vision.</p>
+          <a href="https://arxiv.org/abs/2510.01183">Paper</a> | <a href="https://github.com/JiahaoPlus/EvoWorld">Code</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-image-box"><img src='images/deocclusion.png'></td>
+        <td class="pub-text-box">
+          <a href="https://arxiv.org/"><papertitle>Fast Generative DeOcclusion for Visual Geometry and Robotics</papertitle></a><br>
+          <span class="author">Jieneng Chen et al.</span>
+          <p class="conference"><b>CVPR</b>, Findings, 2026. [Coming soon]</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-image-box"><video width="200" height="auto" autoplay loop muted playsinline><source src="images/mewm-480p.mov" type="video/mp4"></video></td>
+        <td class="pub-text-box">
+          <a href="https://arxiv.org/pdf/2506.02327"><papertitle>Medical World Model: Generative Simulation of Tumor Evolution for Treatment Planning</papertitle></a><br>
+          <span class="author"><a href="https://yijun-yang.github.io/" class="author">Yijun Yang</a>, <a href="https://aiem.jhu.edu/people/zhaoyang-wang/" class="author">Zhao-Yang Wang</a>, <a href="https://github.io/" class="author">Qiuping Liu</a>, <a href="https://github.io/" class="author">Shuwen Sun</a>, <a href="https://radiology.ucsf.edu/people/kang-wang" class="author">Kang Wang</a>, <a href="https://engineering.jhu.edu/faculty/rama-chellappa/" class="author">Rama Chellappa</a>, <a href="https://www.zongweiz.com/" class="author">Zongwei Zhou</a>, <a href="https://www.cs.jhu.edu/~ayuille/" class="author">Alan Yuille</a>, <a href="https://sites.google.com/site/indexlzhu/home" class="author">Lei Zhu</a>, <a href="https://github.io/" class="author">Yu-Dong Zhang</a>, Jieneng Chen.</span>
+          <p class="conference"><b>ICCV</b>, 2025.</p>
+          <p class="abstract">Precision medicine via generative world modeling.</p>
+          <a href="https://arxiv.org/pdf/2506.02327">Paper</a> | <a href="https://github.com/scott-yjyang/MeWM">Code</a> | <a href="https://yijun-yang.github.io/MeWM/">Project</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-image-box"><img src='images/spatial457.png'></td>
+        <td class="pub-text-box">
+          <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_Spatial457_A_Diagnostic_Benchmark_for_6D_Spatial_Reasoning_of_Large_CVPR_2025_paper.pdf"><papertitle>Spatial457: A Diagnostic Benchmark for 6D Spatial Reasoning of Large Multimodal Models</papertitle></a><br>
+          <span class="author"><a href="https://xingruiwang.github.io/" class="author">Xingrui Wang</a>, <a href="https://wufeim.github.io/" class="author">Wufei Ma</a>, <a href="https://ollie-ztz.github.io/Tiezheng.github.io/" class="author">Tiezheng Zhang</a>, <a href="https://celsodemelo.net/" class="author">Celso Miguel de Melo</a>, Jieneng Chen&dagger;, <a href="https://www.cs.jhu.edu/~ayuille/" class="author">Alan Yuille</a>&dagger;.</span>
+          <p class="conference"><b>CVPR</b>, 2025. <b>Highlight</b>.</p>
+          <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_Spatial457_A_Diagnostic_Benchmark_for_6D_Spatial_Reasoning_of_Large_CVPR_2025_paper.pdf">Paper</a> | <a href="https://github.com/XingruiWang/Spatial457">Code</a> | <a href="https://huggingface.co/datasets/RyanWW/Spatial457">HuggingFace</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-image-box"><img src='images/spatialllm.png'></td>
+        <td class="pub-text-box">
+          <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Ma_SpatialLLM_A_Compound_3D-Informed_Design_towards_Spatially-Intelligent_Large_Multimodal_Models_CVPR_2025_paper.pdf"><papertitle>SpatialLLM: A Compound 3D-Informed Design towards Spatially-Intelligent Large Multimodal Models</papertitle></a><br>
+          <span class="author"><a href="https://wufeim.github.io/" class="author">Wufei Ma</a>, <a href="https://openreview.net/profile?id=~Luoxin_Ye1" class="author">Luoxin Ye</a>, <a href="https://github.io/" class="author">Nessa McWeeney</a>, <a href="https://celsodemelo.net/" class="author">Celso Miguel de Melo</a>, <a href="https://www.cs.jhu.edu/~ayuille/" class="author">Alan Yuille</a>, Jieneng Chen.</span>
+          <p class="conference"><b>CVPR</b>, 2025. <b>Highlight</b>.</p>
+          <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Ma_SpatialLLM_A_Compound_3D-Informed_Design_towards_Spatially-Intelligent_Large_Multimodal_Models_CVPR_2025_paper.pdf">Paper</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-image-box"><video width="200" height="auto" autoplay loop muted playsinline><source src="images/4d-animal.mp4" type="video/mp4"></video></td>
+        <td class="pub-text-box">
+          <a href="https://arxiv.org/pdf/2507.10437"><papertitle>4D-Animal: Freely Reconstructing Animatable 3D Animals from Videos</papertitle></a><br>
+          <span class="author"><a href="https://zhongshsh.github.io/" class="author">Shanshan Zhong</a>, <a href="https://scholar.google.com/citations?user=4jdUy5AAAAAJ" class="author">Jiawei Peng</a>, <a href="https://scholar.google.com/citations?user=Pig6X6MAAAAJ" class="author">Zehan Zheng</a>, <a href="https://scholar.google.com/citations?user=R-b68CEAAAAJ" class="author">Zhongzhan Huang</a>, <a href="https://scholar.google.com/citations?user=mYkvHdIAAAAJ" class="author">Wufei Ma</a>, <a href="https://scholar.google.com/citations?user=vl0mzhEAAAAJ&hl=en" class="author">Guofeng Zhang</a>, <a href="https://scholar.google.com/citations?user=WFl3hH0AAAAJ&hl" class="author">Qihao Liu</a>, <a href="https://www.cs.jhu.edu/~ayuille/" class="author">Alan Yuille</a>, Jieneng Chen.</span>
+          <p class="conference"><b>WACV</b>, 2026.</p>
+          <a href="https://arxiv.org/pdf/2507.10437">Paper</a> | <a href="https://github.com/zhongshsh/4D-Animal">Code</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-image-box"><img src='images/virtualmarker.png'></td>
+        <td class="pub-text-box">
+          <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Wang_VM-Gait_Multi-Modal_3D_Representation_Based_on_Virtual_Marker_for_Gait_WACV_2025_paper.pdf"><papertitle>VM-Gait: Multi-Modal 3D Representation Based on Virtual Marker for Gait Recognition</papertitle></a><br>
+          <span class="author"><a href="https://scholar.google.com/citations?hl=en&user=L_4sVVYAAAAJ&view_op=list_works&sortby=pubdate" class="author">Zhao-Yang Wang</a>, <a href="https://joellliu.github.io/" class="author">Jiang Liu</a>, Jieneng Chen*, <a href="https://engineering.jhu.edu/faculty/rama-chellappa/" class="author">Rama Chellappa</a>*.</span>
+          <p class="conference"><b>WACV</b>, 2025.</p>
+          <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Wang_VM-Gait_Multi-Modal_3D_Representation_Based_on_Virtual_Marker_for_Gait_WACV_2025_paper.pdf">Paper</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-image-box"><img src='images/vitamin.png'></td>
+        <td class="pub-text-box">
+          <a href="https://arxiv.org/pdf/2404.02132.pdf"><papertitle>ViTamin: Designing Scalable Vision Models in the Vision-Language Era</papertitle></a><br>
+          <span class="author">Jieneng Chen, <a href="https://www.cs.jhu.edu/~ayuille/" class="author">Qihang Yu</a>, <a href="https://www.cs.jhu.edu/~ayuille/" class="author">Xiaohui Shen</a>, <a href="https://www.cs.jhu.edu/~ayuille/" class="author">Alan Yuille</a>, <a href="http://liangchiehchen.com/" class="author">Liang-Chieh Chen</a>.</span>
+          <p class="conference"><b>CVPR</b>, 2024.</p>
+          <p class="abstract">First vision-centric encoder design for LMMs; SoTA on 60+ benchmarks in 2024.</p>
+          <a href="https://arxiv.org/pdf/2404.02132.pdf">Paper</a> | <a href="https://github.com/Beckschen/ViTamin">Code</a> | <a href="https://huggingface.co/jienengchen/ViTamin-XL-384px">HuggingFace</a> | <a href="https://github.com/huggingface/pytorch-image-models/blob/main/timm/models/vitamin.py">timm</a> | <a href="https://github.com/mlfoundations/open_clip/blob/main/src/open_clip/model_configs/ViTamin-XL-384.json">open_clip</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-image-box"><img src='images/llavolta.png'></td>
+        <td class="pub-text-box">
+          <a href="https://arxiv.org/abs/2406.20092"><papertitle>LLaVolta: Efficient Large Multi-modal Models via Visual Context Compression</papertitle></a><br>
+          <span class="author">Jieneng Chen, <a href="https://openreview.net/profile?id=~Luoxin_Ye1" class="author">Luoxin Ye</a>, <a href="https://tacju.github.io/" class="author">Ju He</a>, <a href="https://aiem.jhu.edu/people/zhaoyang-wang/" class="author">Zhaoyang Wang</a>, <a href="https://danielkhashabi.com/" class="author">Daniel Khashabi</a>, <a href="https://www.cs.jhu.edu/~ayuille/" class="author">Alan Yuille</a>.</span>
+          <p class="conference"><b>NeurIPS</b>, 2024.</p>
+          <a href="https://arxiv.org/pdf/2406.20092">Paper</a> | <a href="https://github.com/Beckschen/LLaVolta">Code</a> | <a href="https://beckschen.github.io/llavolta.html">Project</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-image-box"><img src='images/transunet.png'></td>
+        <td class="pub-text-box">
+          <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056"><papertitle>TransUNet: Rethinking the U-Net Architecture Design for Medical Image Segmentation through the Lens of Transformers</papertitle></a><br>
+          <span class="author">Jieneng Chen, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Jieru Mei</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Xianhang Li</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Yongyi Lu</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Qihang Yu</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Qingyue Wei</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Xiangde Luo</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Yutong Xie</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Ehsan Adeli</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Yan Wang</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Matthew P Lungren</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Shaoting Zhang</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Lei Xing</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Le Lu</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Alan Yuille</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056" class="author">Yuyin Zhou</a>.</span>
+          <p class="conference"><b>Medical Image Analysis</b>, Oct 2024.</p>
+          <p class="abstract">Top-15 cited 2021 paper in all AI fields. Most downloaded on ScienceDirect. Most cited in MedIA.</p>
+          <a href="https://arxiv.org/pdf/2102.04306.pdf">ICML-W 2021</a> | <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002056">Journal</a> | <a href="https://github.com/Beckschen/TransUNet">Code</a> <img src="https://img.shields.io/github/stars/Beckschen/TransUNet?style=social&label=Star&maxAge=2592000" alt="Stars" style="vertical-align:middle;height:16px;">
+        </td>
+      </tr>
+
+    </tbody></table>
+
+    <!-- ── Talks ──────────────────────────────────────── -->
+    <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+      <tbody><tr><td class="section-heading"><heading>Talks</heading></td></tr></tbody>
+    </table>
+    <ul class="clean">
+      <li>Invited talk at <a href="https://iaifi.org/about.html">NSF IAIFI</a> on physics &amp; AI, Boston.</li>
+      <li>Lab seminar at Stanford.</li>
+      <li>Vision seminar at UIUC.</li>
+      <li>Guest lecture at Rice University.</li>
+      <li>Lab seminars at Harvard / MIT / HMS / MGH / Dana-Farber.</li>
+      <li>Talk at ICLR 2025 Workshop on <a href="https://embodiedcity.github.io/iclr25-workshop/">Embodied Intelligence with LLMs in Open City Environment</a> (<a href="https://beckschen.github.io/talks/Talk_Genex_20250427_Jieneng_Chen.pdf">slides</a>).</li>
+      <li>Talks at JHU: <a href="https://engineering.jhu.edu/chembe/">ChemBE</a>, <a href="https://cogsci.jhu.edu/event/brown-bag-talk-jieneng-chen/">Cognitive Science</a>, CLSP, MINDS, AIEM.</li>
+    </ul>
+
+    <!-- ── Teaching ───────────────────────────────────── -->
+    <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+      <tbody><tr><td class="section-heading"><heading>Teaching</heading></td></tr></tbody>
+    </table>
+    <ul class="clean">
+      <li><b>Instructor</b>: Machine Imagination (EN.601.208), JHU, 2025 &amp; 2026.</li>
+    </ul>
+
+    <!-- ── Service ────────────────────────────────────── -->
+    <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+      <tbody><tr><td class="section-heading"><heading>Service</heading></td></tr></tbody>
+    </table>
+    <ul class="clean">
+      <li>Reviewer: CVPR, ICCV, ECCV, WACV, NeurIPS, ICML, ICLR, AAAI, IJCV, TPAMI, TMI, MICCAI, CogSci.</li>
+      <li>Workshop co-organizer: ICCV, CVPR, MICCAI.</li>
+      <li>JHU CS mentor hours.</li>
+      <li>Lecture for JHU WSE Pre-College Program 2025.</li>
+    </ul>
+
+    <!-- ── Mentoring ──────────────────────────────────── -->
+    <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+      <tbody><tr><td class="section-heading"><heading>Mentoring</heading></td></tr></tbody>
+    </table>
+    <p style="margin-left:18px;color:#666;font-size:14px;">I am fortunate to have collaborated with talented students at JHU.</p>
+    <ul class="mentees">
+      <li>
+        <a href="https://taiminglu.com/">TaiMing Lu</a>, JHU Undergraduate &rarr; Princeton CS PhD<br>
+        <span class="note">1 first-author ICLR publication (GenEx). <a href="https://www.cs.jhu.edu/news/celebrating-the-2025-department-and-school-awardees/">Michael J. Muuss Research Award</a>; finalist for <a href="https://cra.org/about/awards/outstanding-undergraduate-researcher-award/">CRA Outstanding Undergraduate Researcher Award</a>.</span>
+      </li>
+      <li>
+        <a href="https://zhongshsh.github.io/">Shanshan Zhong</a>, SYSU MS &rarr; CMU LTI PhD<br>
+        <span class="note">1 first-author WACV publication (4D-Animal).</span>
+      </li>
+    </ul>
+
+    <!-- ── Acknowledgement ────────────────────────────── -->
+    <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+      <tbody><tr><td class="section-heading"><heading>Acknowledgement</heading></td></tr></tbody>
+    </table>
+    <p style="margin:6px 18px 30px; color:#666; font-size:14px; line-height:1.6;">My doctoral research was made possible through the generous support of ARL, IARPA, NSF, NIH, ONR, Lambda, NVIDIA, Johns Hopkins University, the Siebel Foundation, the Patrick J. McGovern Foundation, and the Lustgarten Foundation.</p>
+
+  </td></tr>
+</tbody></table>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script xml:space="preserve" language="JavaScript">
+  if (typeof hideallbibs === 'function') hideallbibs();
+</script>
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-7580334-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
