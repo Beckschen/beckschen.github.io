@@ -24,20 +24,21 @@
   body, td, th, tr, p, a {
     font-family: 'Lato', Verdana, Helvetica, sans-serif;
     font-size: 15px;
-    color: #222;
+    color: #333;
   }
   body { background: #fff; margin: 0; padding: 0; }
 
-  a { color: #1a0dab; text-decoration: none; }
-  a:hover { color: #d33; text-decoration: underline; }
-  a.black-link { color: #222; }
+a { color: #002D72; text-decoration: none; }
+  a:hover { color: #f09228; text-decoration: none; }
+  a.black-link { color: #333; }
 
-  ul.black-links a { color: #222; }
-  ul.black-links a:hover { color: #d33; }
+  ul.black-links a { color: #333; }
+  ul.black-links a:hover { color: #f09228; }
 
   name {
     font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 28px; font-weight: 700; color: #111;
+    font-size: 32px; font-weight: 800; color: #111;
+    letter-spacing: -.02em;
   }
   heading {
     font-family: 'Lato', Verdana, Helvetica, sans-serif;
@@ -51,7 +52,7 @@
     font-size: 15px; font-weight: 700; color: #111;
   }
   .author {
-    font-size: 13px; color: #555;
+    font-size: 13px; color: #666;
   }
   smaller {
     font-size: 14px; color: #666;
@@ -61,19 +62,19 @@
   .outer { width: 100%; max-width: 900px; border: 0; border-spacing: 0; border-collapse: separate; margin: 0 auto; }
 
   /* ── Section spacing ───────────────────────────────── */
-  .section-heading { padding: 24px 10px 4px 10px; }
+  .section-heading { padding: 30px 20px 8px 20px; }
 
   /* ── News / Awards / Talks lists ───────────────────── */
   ul.clean {
-    list-style: none; padding-left: 18px; margin: 6px 0 0 0;
+    list-style: none; padding-left: 20px; margin: 8px 0 4px 0;
   }
   ul.clean li {
-    margin-bottom: 5px; padding-left: 14px; position: relative; line-height: 1.55;
+    margin-bottom: 7px; padding-left: 16px; position: relative; line-height: 1.65;
   }
   ul.clean li::before {
-    content: '–'; position: absolute; left: 0; color: #999;
+    content: '–'; position: absolute; left: 0; color: #ccc;
   }
-  .meta { color: #888; font-size: 13px; }
+  .meta { color: #999; font-size: 13px; }
 
   /* ── Research pillars ──────────────────────────────── */
   .pillars {
@@ -81,14 +82,14 @@
     max-width: 880px; margin: 12px auto 0; padding: 0 10px;
   }
   .pillar {
-    border: 1px solid #ddd; padding: 16px 18px; background: #fafafa;
+    border: 1px solid #eee; padding: 16px 18px; background: #fafafa; border-radius: 6px;
   }
   .pillar-title { font-weight: 700; font-size: 14px; margin-bottom: 8px; color: #111; }
   .pillar-body { font-size: 13px; line-height: 1.6; color: #444; }
   .pillar-body a { font-size: 13px; }
 
   .foundation {
-    border: 1px solid #ddd; padding: 16px 18px; background: #fafafa;
+    border: 1px solid #eee; background: #fafafa; border-radius: 6px;
     max-width: 880px; margin: 20px auto 0; padding: 16px 18px;
   }
   .foundation .pillar-body { columns: 2; column-gap: 30px; }
@@ -98,17 +99,31 @@
   }
 
   /* ── Publications table ────────────────────────────── */
-  .pub-image-box { padding: 20px 20px 20px 10px; width: 25%; vertical-align: top; }
-  .pub-text-box  { padding: 12px 0; width: 75%; vertical-align: top; }
-  .pub-image-box img, .pub-image-box video { width: 200px; height: auto; }
-  .conference { margin: 2px 0; }
-  .abstract { margin: 2px 0; color: #555; font-size: 14px; }
-  .links { margin: 4px 0; }
+  .pub-image-box { padding: 20px 20px 20px 20px; width: 25%; vertical-align: top; }
+  .pub-text-box  { padding: 14px 20px 14px 0; width: 75%; vertical-align: top; }
+  .pub-image-box img, .pub-image-box video { width: 200px; height: auto; border-radius: 4px; }
+  .conference { margin: 4px 0; }
+  .abstract { margin: 4px 0; color: #666; font-size: 14px; line-height: 1.5; }
+  .links { margin: 6px 0; }
+  tr:has(.pub-image-box):hover td { background: #fafafa; transition: background .15s; }
+
+  /* ── Social link chips ─────────────────────────────── */
+  .social-links a {
+    display: inline-block; margin: 3px 2px;
+    padding: 5px 16px;
+    border: 1.5px solid #e0e0e0; border-radius: 20px;
+    font-size: 13px; color: #555;
+    transition: border-color .2s, background .2s, color .2s;
+  }
+  .social-links a:hover {
+    border-color: #f09228; color: #f09228;
+    background: #fffaf5; text-decoration: none;
+  }
 
   /* ── Mentee list ───────────────────────────────────── */
   ul.mentees { padding-left: 20px; }
-  ul.mentees li { margin-bottom: 10px; line-height: 1.5; }
-  ul.mentees .note { color: #666; font-size: 13px; }
+  ul.mentees li { margin-bottom: 12px; line-height: 1.6; }
+  ul.mentees .note { color: #777; font-size: 13px; }
 
   /* ── Responsive ────────────────────────────────────── */
   @media screen and (max-width: 768px) {
@@ -321,14 +336,14 @@
             <span style="font-size:14px;color:#555;">pronounce Jieneng: jee-eh-nung</span><br>
             <span style="font-size:14px;color:#555;">email: jienengc [at] stanford.edu</span>
           </p>
-          <p>I am a postdoctoral researcher at <a href="https://www.cs.stanford.edu/">Stanford</a> <a href="https://svl.stanford.edu/people/">SVL</a>. I received my PhD in <a href="https://www.cs.jhu.edu/" class="black-link">Computer Science</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a> in 2026, working with <a href="http://www.cs.jhu.edu/~ayuille/">Alan L. Yuille</a> and <a href="https://engineering.jhu.edu/faculty/rama-chellappa/">Rama Chellappa</a>. 
+          <p>I am a postdoctoral researcher at <a href="https://www.cs.stanford.edu/">Stanford</a> <a href="https://svl.stanford.edu/people/">SVL</a>. I received my PhD in <a href="https://www.cs.jhu.edu/" class="black-link">Computer Science</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a> in 2026, advised by <a href="http://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>. 
           <p>I study intelligence in the physical world by structuring raw observations into <a href="https://arxiv.org/pdf/2603.05591">spatial code</a>. My works laid the foundation, spanning <a href="https://arxiv.org/pdf/2404.02132.pdf">vision encoders</a> and <a href="https://arxiv.org/pdf/2510.18135">world models</a>. I am best known for <a href="https://arxiv.org/pdf/2102.04306">TransUNet</a>, which unifies local and global context and has over 10,000 citations.</p>
-          <p>I am a <a href="https://www.businesswire.com/news/home/20240920559594/en/Siebel-Scholars-Foundation-Announces-Class-of-2025">Siebel scholar</a> for contributions to bioengineering, a <a href="https://kempnerinstitute.harvard.edu/news/announcing-2026-kempner-institute-research-fellows/">Kempner fellow</a>, and a recipient of several best paper and young investigator awards.</p>
-          <p style="text-align:center; margin-top:12px;">
-            <a href="/cdn-cgi/l/email-protection#80eae3e8e5eeb2b9b3c0eae8aee5e4f5">Email</a> &middot;
-            <a href="./Jieneng_Chen_CV.pdf">CV</a> &middot;
-            <a href="https://scholar.google.com/citations?hl=en&user=yLYj88sAAAAJ">Scholar</a> &middot;
-            <a href="https://github.com/Beckschen">Github</a> &middot;
+          <p>I am honored as a Young American Scientists by the pretigious magazine Scientific American, a <a href="https://www.businesswire.com/news/home/20240920559594/en/Siebel-Scholars-Foundation-Announces-Class-of-2025">Siebel Scholar</a> for contributions to bioengineering, a <a href="https://kempnerinstitute.harvard.edu/news/announcing-2026-kempner-institute-research-fellows/">Kempner fellow</a> to study AI and natural intelligence, and a recipient of a few Young Investigator and Best Paper Awards.</p>
+          <p style="text-align:center; margin-top:16px;" class="social-links">
+            <a href="/cdn-cgi/l/email-protection#80eae3e8e5eeb2b9b3c0eae8aee5e4f5">Email</a>
+            <a href="./Jieneng_Chen_CV.pdf">CV</a>
+            <a href="https://scholar.google.com/citations?hl=en&user=yLYj88sAAAAJ">Scholar</a>
+            <a href="https://github.com/Beckschen">Github</a>
             <a href="https://www.linkedin.com/in/jieneng-chen-53254011a/">LinkedIn</a>
           </p>
         </td>
@@ -343,8 +358,8 @@
       <tbody><tr><td class="section-heading"><heading>News</heading></td></tr></tbody>
     </table>
     <ul class="clean">
-      <li>New paper: <a href="https://arxiv.org/pdf/2603.05591">Thinking with Spatial Code</a> — new SoTA on VSI-bench for 3D/4D reasoning.</li>
-      <li>Co-organizing the 1st CVPR 2026 workshop on <a href="https://cvpr26wmas.github.io/cvpr26wmas.html">World Models Meet Active Sensing and Embodied Planning</a>. Try our benchmark <a href="https://world-in-world.github.io/">World-in-World</a> (ICLR 2026 Oral).</li>
+      <li>I am deeply honored to be recognized by <a href="https://www.scientificamerican.com"><img src="images/sciam/SciAm-full-logo-black_text_on_white.jpg" alt="Scientific American" style="height:1.6em;vertical-align:middle;display:inline;border-radius:0;"></a>  as one of the <a href="https://www.scientificamerican.com/report/young-american-scientists-2026/">Young American Scientists</a>. The magazine has inspired my curiosity about science since childhood.</li>
+      <li>Co-organizing the 1st CVPR 2026 workshop on <a href="https://cvpr26wmas.github.io/cvpr26wmas.html">World Models Meet Active Sensing and Embodied Planning</a>. </li>
       <li>Co-organizing the 4th CVPR 2026 workshop on <a href="https://generative-vision.github.io/workshop-CVPR-26/">Generative Models for Computer Vision</a>.</li>
       <li>Research opportunities: feel free to email me. I host students through <a href="https://ccvl.jhu.edu/summer-intern-2026/">CCVL</a> as well as SVL. </li>
     </ul>
@@ -354,18 +369,20 @@
       <tbody><tr><td class="section-heading"><heading>Awards and Honors</heading></td></tr></tbody>
     </table>
     <ul class="clean black-links">
-      <li><a href="https://www.businesswire.com/news/home/20240920559594/en/Siebel-Scholars-Foundation-Announces-Class-of-2025">Siebel Scholar Award</a>, 2025 <span class="meta"></span></li>
-      <li>MICCAI <a href="https://miccai.org/index.php/news/2025/10/20/announcing-the-recipients-of-the-miccai-2025-best-paper-and-young-scientist-awards">Best Paper Award</a> <span class="meta">(runner-up, 2 / 1,027 accepted papers)</span>, 2025</li>
-      <li>MICCAI Doctoral Consortium Thesis Award, 2025</li>
-      <li><a href="http://beckschen.github.io/awards/kdd_healthday.jpg">Young Investigator Best Paper Award</a> — <a href="http://beckschen.github.io/awards/kdd_healthday.jpg">KDD Health Day</a> and <a href="https://cccblog.org/2025/08/18/blue-sky-track-winners-at-acm-sigkdd-2025-health-day/">CCC</a>, 2025</li>
-      <li><a href="http://beckschen.github.io/awards/material_visionary_award.png">Visionary Award</a>, <a href="https://arxiv.org/pdf/2605.03205">Large Language Model Hackason for Material Science</a>, 2025</li>
-      <li>CVPR Doctoral Consortium, 2025</li>
-      <li>JHU Provost Thesis Award, 2026</li>
-      <li>RSNA Certificate of Merit Award<span class="meta"> (16 / 1,951)</span>, 2025</li>
-      <li><a href="https://kempnerinstitute.harvard.edu/news/announcing-2026-kempner-institute-research-fellows/">Kempner Research Fellowship</a>, 2026<span class="meta"></span></li>
-      <li>NVIDIA 2025 Academic Grant<span class="meta"></span>, 2025</li>
-      <li><a href="https://www.daad.de/en/the-daad/postdocnet/fellows/fellows/">DAAD AInet Fellowship</a>, 2022</li>
-      <li>#1 most downloaded article on ScienceDirect; among the most cited in MedIA, 2026</li>
+      <li>2026 <a href="https://www.scientificamerican.com/report/young-american-scientists-2026/">Young American Scientists</a>, Scientific American</li>
+      <li>2026 JHU Provost Thesis Award</li>
+      <li>2026 <a href="https://kempnerinstitute.harvard.edu/news/announcing-2026-kempner-institute-research-fellows/">Kempner Research Fellowship</a><span class="meta"></span></li>
+      <li>2025 <a href="https://www.businesswire.com/news/home/20240920559594/en/Siebel-Scholars-Foundation-Announces-Class-of-2025">Siebel Scholar Award</a>, 1 of 22 globally recognized scholars in bioengineering <span class="meta"></span></li>
+      <li>2025 MICCAI <a href="https://miccai.org/index.php/news/2025/10/20/announcing-the-recipients-of-the-miccai-2025-best-paper-and-young-scientist-awards">Best Paper Award</a>, Runner-up, top 2/3677</span></li>
+      <li>2025 MICCAI Doctoral Consortium Thesis Award.</li>
+      <li>2025 <a href="http://beckschen.github.io/awards/kdd_healthday.jpg">Young Investigator Best Paper Award</a> — <a href="http://beckschen.github.io/awards/kdd_healthday.jpg">KDD Health Day</a> and <a href="https://cccblog.org/2025/08/18/blue-sky-track-winners-at-acm-sigkdd-2025-health-day/">CCC</a></li>
+      <li>2025 <a href="http://beckschen.github.io/awards/material_visionary_award.png">Visionary Award</a>, <a href="https://arxiv.org/pdf/2605.03205">Large Language Model Hackason for Material Science</a></li>
+      <li>2025 CVPR Doctoral Consortium</li>
+      <li>2025 RSNA Certificate of Merit Award</li>
+      <li>2025 NVIDIA 2025 Academic Grant<span class="meta"></span></li>
+      <li>2022 <a href="https://www.daad.de/en/the-daad/postdocnet/fellows/fellows/">DAAD AInet Fellow</a></li>
+      <li>#1 most downloaded article on ScienceDirect, 2026</li>
+      <li>#1 most cited in the journal of MedIA, 2026</li>
       <li>#1 most cited among all ECCV publications in past five years (Google Metrics), 2026</li>
     </ul>
 
@@ -534,7 +551,7 @@
         </td>
       </tr>
 
-      <tr>
+      <!-- <tr>
         <td class="pub-image-box"><img src='images/causalspatial.png'></td>
         <td class="pub-text-box">
           <a href="https://arxiv.org/pdf/2601.13304"><papertitle>CausalSpatial: A Comprehensive Benchmark for Object-Centric Causal Spatial Reasoning</papertitle></a><br>
@@ -554,7 +571,7 @@
           <p class="abstract">Bridge generative world models with 3D vision.</p>
           <a href="https://arxiv.org/abs/2510.01183">Paper</a> | <a href="https://github.com/JiahaoPlus/EvoWorld">Code</a>
         </td>
-      </tr>
+      </tr> -->
 
 
       <tr>
@@ -597,7 +614,7 @@
           <a href="https://arxiv.org/pdf/2507.10437">Paper</a> | <a href="https://github.com/zhongshsh/4D-Animal">Code</a>
         </td>
       </tr>
-
+<!-- 
       <tr>
         <td class="pub-image-box"><img src='images/virtualmarker.png'></td>
         <td class="pub-text-box">
@@ -606,7 +623,7 @@
           <p class="conference"><b>WACV</b>, 2025.</p>
           <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Wang_VM-Gait_Multi-Modal_3D_Representation_Based_on_Virtual_Marker_for_Gait_WACV_2025_paper.pdf">Paper</a>
         </td>
-      </tr>
+      </tr> -->
 
       <tr>
         <td class="pub-image-box"><img src='images/vitamin.png'></td>
@@ -642,10 +659,27 @@
 
     </tbody></table>
 
-    <!-- ── Talks ──────────────────────────────────────── -->
+    <!-- ── Talks and Interviews ───────────────────────── -->
     <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
-      <tbody><tr><td class="section-heading"><heading>Talks</heading></td></tr></tbody>
+      <tbody><tr><td class="section-heading"><heading>Talks and Interviews</heading></td></tr></tbody>
     </table>
+
+    <!-- Scientific American video -->
+    <div style="padding: 8px 10px 16px 10px;">
+      <a href="https://www.youtube.com/watch?v=SYLMPOXDstg&t=21s" target="_blank"
+         style="display:block;max-width:560px;position:relative;border-radius:6px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.12);text-decoration:none;">
+        <img src="https://img.youtube.com/vi/SYLMPOXDstg/maxresdefault.jpg"
+             alt="Scientific American — Young American Scientists 2026"
+             style="width:100%;display:block;">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.15);">
+          <div style="width:68px;height:48px;background:#ff0000;border-radius:12px;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.46 1.7C55.17 0 34 0 34 0S12.83 0 7.54 1.7A8.55 8.55 0 0 0 1.48 7.74 89.5 89.5 0 0 0 0 24a89.5 89.5 0 0 0 1.48 16.26 8.55 8.55 0 0 0 6.06 6.04C12.83 48 34 48 34 48s21.17 0 26.46-1.7a8.55 8.55 0 0 0 6.06-6.04A89.5 89.5 0 0 0 68 24a89.5 89.5 0 0 0-1.48-16.26z" fill="#ff0000"/><polygon points="45,24 27,14 27,34" fill="#fff"/></svg>
+          </div>
+        </div>
+      </a>
+      <p style="margin:6px 0 0;font-size:13px;color:#888;"><em>Feature interview, <a href="https://www.scientificamerican.com/report/young-american-scientists-2026/" target="_blank">Scientific American — Young American Scientists 2026</a></em></p>
+    </div>
+
     <ul class="clean">
       <li>Invited talk at <a href="https://iaifi.org/about.html">NSF IAIFI</a> on physics &amp; AI, Boston.</li>
       <li>Lab seminar at Stanford.</li>
