@@ -142,12 +142,18 @@ a { color: #002D72; text-decoration: none; }
 
 
   /* ── Awards / Grants two-column ────────────────────── */
-  .awards-grid {
+/*  .awards-grid {
     display: grid; grid-template-columns: 1fr 1fr; gap: 0 30px;
     align-items: start;
   }
   .awards-grid .section-heading { display: block; }
-
+*/
+.awards-grid {
+  display: grid;
+  grid-template-columns: 3.3fr 2fr;
+  column-gap: 10px;
+  align-items: start;
+}
   /* ── Research pillars ──────────────────────────────── */
   .pillars {
     display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
@@ -423,7 +429,7 @@ a { color: #002D72; text-decoration: none; }
         <p class="bio-name">Jieneng Chen</p>
         <p class="bio-sub">Pronounce: jee-eh-nung&nbsp;&nbsp;·&nbsp;&nbsp;陈杰能&nbsp;&nbsp;·&nbsp;&nbsp;Email: jienengc [at] stanford.edu</p>
         <p>I am a postdoctoral researcher at <a href="https://www.cs.stanford.edu/">Stanford</a> <a href="https://svl.stanford.edu/people/">SVL</a>, working with <a href="https://jiajunwu.com/">Jiajun Wu</a>. I received my PhD in <a href="https://www.cs.jhu.edu/" class="black-link">Computer Science</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a> in 2026, advised by <a href="http://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>.</p>
-        <p>I study intelligence in the physical world by structuring raw observations into <a href="https://arxiv.org/pdf/2603.05591">spatial code</a>. My works laid the foundation, spanning <a href="https://arxiv.org/pdf/2404.02132.pdf">vision encoders</a> and <a href="https://arxiv.org/pdf/2510.18135">world models</a>. I am best known for <a href="https://arxiv.org/pdf/2102.04306">TransUNet</a>, which unifies local and global context and has over 10,000 citations.</p>
+        <p>I study intelligence in the physical world by structuring raw observations into <a href="https://arxiv.org/pdf/2603.05591">spatial code</a>. My works laid the foundation, spanning <a href="https://arxiv.org/pdf/2404.02132.pdf">vision encoders</a> and <a href="https://arxiv.org/pdf/2510.18135">world models</a>. I am best known for <a href="https://arxiv.org/pdf/2102.04306">TransUNet</a>, which combines local and global context and is widely recognized as one of the first Transformers for biomedical image analysis. It has received over 10,000 citations.</p>
         <p>I am honored as a Young American Scientist by the pretigious magazine Scientific American, a <a href="https://www.businesswire.com/news/home/20240920559594/en/Siebel-Scholars-Foundation-Announces-Class-of-2025">Siebel Scholar</a> in bioengineering, and a recipient of a few best paper awards.</p>
         <p class="social-links">
           <a href="/cdn-cgi/l/email-protection#80eae3e8e5eeb2b9b3c0eae8aee5e4f5">Email</a>
@@ -443,10 +449,9 @@ a { color: #002D72; text-decoration: none; }
         </table>
         <ul class="clean">
           <li>07/2026. <img class="row-logo" src="images/sciam/SciAm-square-logo-black_on_transparent.png" alt="Scientific American">I am deeply honored to be recognized by <a href="https://www.scientificamerican.com">Scientific American</a> as one of the <a href="https://www.scientificamerican.com/report/young-american-scientists-2026/">Young American Scientists</a>. The magazine has inspired my curiosity about science since childhood.</li>
-          <li>07/2026. Invited to serve as Area Chair for the 15th International Conference on Learning Representations (ICLR-27). </li>
+          <li>07/2026. Invited to serve as Area Chair for ICLR 2027 and AAAI 2027. </li>
           <li>06/2026. Co-organized <a href="https://cvpr26wmas.github.io/cvpr26wmas.html">WMAS</a> (World Model Meets Active Sensing) and <a href="https://generative-vision.github.io/workshop-CVPR-26/">GCV</a> (Generative Computer Vision) workshops at IEEE/CVF Computer Vision and Pattern Recognition Conference (CVPR) 2026.
-          <li>06/2026. Invited to serve as Area Chair for the 41st AAAI Conference on Artificial Intelligence (AAAI-27). </li>
-          <li>04/2026. World-in-World is selected as Oral presentation (1%) in ICLR 2026.</li>
+          <li>04/2026. World-in-World is selected as Oral presentation (top 1% of submissions) in ICLR 2026.</li>
           <li>Happy to chat if you’re looking for research collaboration or research opportunities.</li>
         </ul>
 
@@ -482,49 +487,52 @@ a { color: #002D72; text-decoration: none; }
     <div class="awards-grid">
       <div>
         <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
-          <tbody><tr><td class="section-heading"><heading>Recognitions & Paper awards</heading></td></tr></tbody>
+          <tbody><tr><td class="section-heading"><heading>Paper award & recognition</heading></td></tr></tbody>
         </table>
         <ul class="clean black-links">
-          <li><img class="row-logo" src="images/sciam/SciAm-square-logo-black_on_transparent.png" alt="Scientific American">2026 <a href="https://www.scientificamerican.com/report/young-american-scientists-2026/">Young American Scientists</a>, Scientific American</li>
-          <li><img class="row-logo" src="images/logos/kdd2025.png" alt="KDD 2025">2025 <a href="http://beckschen.github.io/awards/kdd_healthday.jpg">Young Investigator Best Paper Award</a>, <a href="http://beckschen.github.io/awards/kdd_healthday.jpg">KDD Healthday</a>  </li>
-          <li><img class="row-logo" src="images/logos/miccai.png" alt="MICCAI">2025 MICCAI <a href="https://miccai.org/index.php/news/2025/10/20/announcing-the-recipients-of-the-miccai-2025-best-paper-and-young-scientist-awards">Best Paper Award</a>, Runner-up, top 2/3677</li>
-          <li><img class="row-logo" src="images/logos/miccai.png" alt="MICCAI">2025 MICCAI Best Thesis Award, #3 globally</li>
-          <li><img class="row-logo" src="images/logos/material.svg" alt="Material science">2025 <a href="http://beckschen.github.io/awards/material_visionary_award.png">Visionary Award</a>, <a href="https://arxiv.org/pdf/2605.03205">LLM Hackason for Material Science</a></li>
-<!--           <li>2025 CVPR Doctoral Consortium</li> -->
-          <li><img class="row-logo" src="images/logos/rsna.png" alt="RSNA">2025 RSNA Certificate of Merit Award</li>
+        <li><img class="row-logo" src="images/logos/elsevier.png" alt="MedIA">2026 <a href="http://jienengchen.com/awards/2026_MedIA_best_paper.jpeg">Elsevier-MedIA Best Paper Award Runner-Up</a> (Bassi et al.)
+          <li><img class="row-logo" src="images/logos/elsevier.png" alt="MedIA">2026 <a href="https://www.sciencedirect.com/journal/medical-image-analysis">Elsevier-MedIA Top Cited Article (Chen et al.)</a>, listed on journal homepage  </li>
+            <li><img class="row-logo" src="images/logos/kdd2025.png" alt="KDD 2025">2025 <a href="http://beckschen.github.io/awards/2025_KDD_healthday.jpg">KDD Healthday Young Investigator Best Paper Award</a> (Chen et al.)  </li>
+          <li><img class="row-logo" src="images/logos/miccai.png" alt="MICCAI">2025 MICCAI <a href="https://miccai.org/index.php/news/2025/10/20/announcing-the-recipients-of-the-miccai-2025-best-paper-and-young-scientist-awards">Best Paper Award</a> Runner-up (Bassi et al.)</li>
+<!--           <li><img class="row-logo" src="images/logos/material.svg" alt="Material science">2025 <a href="http://beckschen.github.io/awards/material_visionary_award.png">Visionary Award</a> (Cao et al.), <a href="https://arxiv.org/pdf/2605.03205">LLM Hackason for Material Science</a></li> -->
+          <li><img class="row-logo" src="images/logos/rsna.png" alt="RSNA">2025 RSNA Certificate of Merit Award (Bassi et al.)</li>
+          <li><img class="row-logo" src="images/logos/miccai.png" alt="MICCAI">2025 MICCAI PhD Thesis Award (Chen et al.)</li>
         </ul>
       </div>
       <div>
         <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
-          <tbody><tr><td class="section-heading"><heading>Grant awards</heading></td></tr></tbody>
+          <tbody><tr><td class="section-heading"><heading>grant and fellowship</heading></td></tr></tbody>
         </table>
         <ul class="clean black-links">
-          <li><img class="row-logo" src="images/logos/biswas_sq.png" alt="Biswas Family Foundation">2026 Biswas Foundation Grant</li>
           <li><img class="row-logo" src="images/logos/kempner_sq.jpg" alt="Kempner Institute">2026 <a href="https://kempnerinstitute.harvard.edu/news/announcing-2026-kempner-institute-research-fellows/">Kempner Research Fellowship</a><span class="meta"></span></li>
-          <li><img class="row-logo" src="images/logos/siebel_sq.png" alt="Siebel Scholars">2025 <a href="https://www.businesswire.com/news/home/20240920559594/en/Siebel-Scholars-Foundation-Announces-Class-of-2025">Siebel Scholar Award</a>, 22 BioE MDs/PhDs worldwide<span class="meta"></span></li>
           <li><img class="row-logo" src="images/logos/jhu_sq.png" alt="Johns Hopkins">2026 JHU Provost Thesis Completion Award</li>
+          <li><img class="row-logo" src="images/logos/biswas_sq.png" alt="Biswas Family Foundation">2026 Biswas Foundation Grant</li>
+          <li><img class="row-logo" src="images/logos/siebel_sq.png" alt="Siebel Scholars">2025 <a href="https://www.businesswire.com/news/home/20240920559594/en/Siebel-Scholars-Foundation-Announces-Class-of-2025"> Siebel Scholar Award</a><span class="meta"></span></li>
           <li><img class="row-logo" src="images/nvidia-logo.svg" alt="NVIDIA">2025 NVIDIA Academic Grant<span class="meta"></span></li>
           <li><img class="row-logo" src="images/logos/daad_d.png" alt="DAAD">2022 <a href="https://www.daad.de/en/the-daad/postdocnet/fellows/fellows/">DAAD AInet Fellowship</a></li>
-<!--           <li>2019-2025 <a href="https://lustgarten.org/">Lustgarten Foundation (Best solutions provider)</a></li> -->
         </ul>
-
-<!--         <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
-          <tbody><tr><td class="section-heading"><heading>Impact Recognitions</heading></td></tr></tbody>
-        </table>
-        <ul class="clean black-links">
-          <li><img class="row-logo" src="images/logos/elsevier_sq.png" alt="Elsevier">#1 most downloaded article on ScienceDirect, 2026</li>
-          <li><img class="row-logo" src="images/logos/elsevier_sq.png" alt="Elsevier">#1 most cited in the journal of MedIA, 2026</li>
-          <li><img class="row-logo" src="images/logos/scholar_sq.png" alt="Google Scholar">#1 most cited among all ECCV publications in past five years (Google Metrics), 2026</li>
-        </ul> -->
       </div>
     </div>
+
+             <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+          <tbody><tr><td class="section-heading"><heading>personal recognition</heading></td></tr></tbody>
+        </table>
+        <ul class="clean black-links">
+          <li><img class="row-logo" src="images/sciam/SciAm-square-logo-black_on_transparent.png" alt="Scientific American">2026 <a href="https://www.scientificamerican.com/report/young-american-scientists-2026/">inaugural class of 28 Young American Scientists</a>, Scientific American</li>
+<!--           <li><img class="row-logo" src="images/logos/siebel_sq.png" alt="Siebel Scholars">2025 <a href="https://www.businesswire.com/news/home/20240920559594/en/Siebel-Scholars-Foundation-Announces-Class-of-2025"> Siebel Scholar</a>, one of 22 bioengineering PhD scholors worldwide<span class="meta"></span></li> -->
+<!--           <li><img class="row-logo" src="images/logos/elsevier_sq.png" alt="Elsevier">#1 most downloaded article on ScienceDirect, 2026</li>
+          <li><img class="row-logo" src="images/logos/elsevier_sq.png" alt="Elsevier">#1 most cited in the journal of MedIA, 2026</li>
+          <li><img class="row-logo" src="images/logos/scholar_sq.png" alt="Google Scholar">#1 most cited among all ECCV publications in past five years (Google Metrics), 2026</li> -->
+        </ul>
+
+
 
 
     <!-- ── Recent Projects ────────────────────────────── -->
     <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
       <tbody><tr><td class="section-heading"><heading>Recent Projects</heading></td></tr></tbody>
     </table>
-    <p style="padding:0 10px;"><smaller>Publications from the past two years. Full list on <a href="https://scholar.google.com/citations?hl=en&user=yLYj88sAAAAJ">Google Scholar</a>.</smaller></p>
+    <p style="padding:0 10px;"><smaller>Selected publications. Full list on <a href="https://scholar.google.com/citations?hl=en&user=yLYj88sAAAAJ">Google Scholar</a>.</smaller></p>
 
     <!-- ══════════════════════════════════════════════
          RESEARCH BANNER
@@ -553,6 +561,20 @@ a { color: #002D72; text-decoration: none; }
             </div>
           </a>
 
+          <a class="rs-card" data-p="causal" href="https://arxiv.org/pdf/2601.13304" target="_blank">
+            <div class="rs-thumb">
+              <div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div>
+              <div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 12h6M15.5 7.5l-6 4M15.5 16.5l-6-4"/></svg></div>
+              <img src="images/causalspatial.png" alt="CausalSpatial" onerror="this.style.display='none'">
+              <div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div>
+              <span class="rs-tag">NeurIPS'26</span>
+            </div>
+            <div class="rs-body">
+              <span class="rs-name">CausalSpatial</span>
+              <p class="rs-desc">Causal reasoning in the physical world.</p>
+            </div>
+          </a>
+
           <a class="rs-card" data-p="genex" href="https://genex.world/" target="_blank">
             <div class="rs-thumb">
               <div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div>
@@ -569,19 +591,7 @@ a { color: #002D72; text-decoration: none; }
             </div>
           </a>
 
-<!--           <a class="rs-card" data-p="causal" href="https://arxiv.org/pdf/2601.13304" target="_blank">
-            <div class="rs-thumb">
-              <div class="rs-thumb-bg"></div><div class="rs-thumb-grid"></div><div class="rs-thumb-lines"></div>
-              <div class="rs-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 12h6M15.5 7.5l-6 4M15.5 16.5l-6-4"/></svg></div>
-              <img src="images/causalspatial.png" alt="CausalSpatial" onerror="this.style.display='none'">
-              <div class="rs-overlay"><div class="rs-play"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div></div>
-              <span class="rs-tag">arXiv'26</span>
-            </div>
-            <div class="rs-body">
-              <span class="rs-name">CausalSpatial</span>
-              <p class="rs-desc">Object-centric causal spatial reasoning benchmark with physics-aware world model evaluation.</p>
-            </div>
-          </a> -->
+
 
           <a class="rs-card" data-p="mewm" href="https://yijun-yang.github.io/MeWM/" target="_blank">
             <div class="rs-thumb">
@@ -664,6 +674,22 @@ a { color: #002D72; text-decoration: none; }
       </tr>
 
       <tr>
+        <td class="pub-image-box"><img src='images/causalspatial.png'></td>
+        <td class="pub-text-box">
+          <a href="https://arxiv.org/pdf/2601.13304"><papertitle>CausalSpatial: A Comprehensive Benchmark for Object-Centric Causal Spatial Reasoning</papertitle></a><br>
+          <span class="author"><a href="https://engineering.jhu.edu/" class="author">Wenxin Ma*</a>, <a href="https://engineering.jhu.edu/" class="author">Chenlong Wang*</a>, <a href="https://engineering.jhu.edu/" class="author">Ruisheng Yuan*</a>, <a href="https://engineering.jhu.edu/" class="author">Hao Chen</a>, <a href="https://engineering.jhu.edu/" class="author">Nanru Dai</a>, 
+            <a href="https://engineering.jhu.edu/" class="author">Yijun Yang</a>, 
+            <a href="https://engineering.jhu.edu/" class="author">Qi Chen</a>, 
+            <a href="https://engineering.jhu.edu/" class="author">Zhao-Yang Wang</a>, 
+            <a href="https://engineering.jhu.edu/" class="author">S. Kevin Zhou</a>, 
+            <a href="https://engineering.jhu.edu/" class="author">Jianwen Xie</a>, 
+            <a href="https://engineering.jhu.edu/" class="author">Alan Yuille</a>, Jieneng Chen.</span>
+          <p class="conference"><b>NeurIPS</b>, Evaluations & Datasets (E&D) Track, 2026.</p>
+          <a href="https://arxiv.org/pdf/2601.13304">Paper</a> | <a href="https://huggingface.co/datasets/Mwxinnn/CausalSpatial">HuggingFace Dataset</a>
+        </td>
+      </tr>
+
+      <tr>
         <td class="pub-image-box"><img src='images/deocclusion.png'></td>
         <td class="pub-text-box">
           <a href="https://openaccess.thecvf.com/content/CVPR2026F/papers/Chen_Fast_Generative_DeOcclusion_for_Visual_Geometry_and_Robotics_CVPRF_2026_paper.pdf"><papertitle>Fast Generative DeOcclusion for Visual Geometry and Robotics</papertitle></a><br>
@@ -684,18 +710,8 @@ a { color: #002D72; text-decoration: none; }
         </td>
       </tr>
 
-      <!-- <tr>
-        <td class="pub-image-box"><img src='images/causalspatial.png'></td>
-        <td class="pub-text-box">
-          <a href="https://arxiv.org/pdf/2601.13304"><papertitle>CausalSpatial: A Comprehensive Benchmark for Object-Centric Causal Spatial Reasoning</papertitle></a><br>
-          <span class="author"><a href="https://engineering.jhu.edu/" class="author">Wenxin Ma*</a>, <a href="https://engineering.jhu.edu/" class="author">Chenlong Wang*</a>, <a href="https://engineering.jhu.edu/" class="author">Ruisheng Yuan*</a>, <a href="https://engineering.jhu.edu/" class="author">Hao Chen</a>, <a href="https://engineering.jhu.edu/" class="author">Nanru Dai</a>, <a href="https://engineering.jhu.edu/" class="author">S. Kevin Zhou</a>, <a href="https://engineering.jhu.edu/" class="author">Yijun Yang</a>, <a href="https://engineering.jhu.edu/" class="author">Alan Yuille</a>, Jieneng Chen.</span>
-          <p class="conference"><b>ICLR</b> Workshop on World Models, 2026.</p>
-          <p class="abstract">A benchmark and early causal world model for grounded causal reasoning in space.</p>
-          <a href="https://arxiv.org/pdf/2601.13304">Paper</a> | <a href="https://huggingface.co/datasets/Mwxinnn/CausalSpatial">HuggingFace Dataset</a>
-        </td>
-      </tr>
 
-      <tr>
+<!--       <tr>
         <td class="pub-image-box"><img src='images/evoworld.png'></td>
         <td class="pub-text-box">
           <a href="https://arxiv.org/abs/2510.01183"><papertitle>EvoWorld: Evolving Panoramic World Generation with Explicit 3D Memory</papertitle></a><br>
@@ -704,8 +720,8 @@ a { color: #002D72; text-decoration: none; }
           <p class="abstract">Bridge generative world models with 3D vision.</p>
           <a href="https://arxiv.org/abs/2510.01183">Paper</a> | <a href="https://github.com/JiahaoPlus/EvoWorld">Code</a>
         </td>
-      </tr> -->
-
+      </tr>
+ -->
 
       <tr>
         <td class="pub-image-box"><video width="200" height="auto" autoplay loop muted playsinline><source src="images/mewm-480p.mov" type="video/mp4"></video></td>
@@ -836,9 +852,9 @@ a { color: #002D72; text-decoration: none; }
       <tbody><tr><td class="section-heading"><heading>Service</heading></td></tr></tbody>
     </table>
     <ul class="clean">
+      <li>Area Chair: AAAI 2027, ICLR 2027.</li>
       <li>Reviewer: AAAI, CogSci, CVPR, ECCV, ICCV, ICLR, ICML (Reviewer Award), MedIA, MICCAI, Nature Machine Intelligence, NeurIPS, TAPMI, TMI</li>
       <li>Co-organizer: CVPR-GCV 2025/2026, CVPR-WMAS 2026, CVPR-CV4Clinical 2026, ICCV-ESR 2025.</li>
-      <li>Area Chair: AAAI 2027, ICLR 2027.</li>
       <li>Inclusion: Lecture for JHU WSE Pre-College Program 2025. JHU CS mentor hours.</li>
     </ul>
 
@@ -846,24 +862,11 @@ a { color: #002D72; text-decoration: none; }
     <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
       <tbody><tr><td class="section-heading"><heading>Mentoring</heading></td></tr></tbody>
     </table>
-    <p style="margin-left:18px;color:#666;font-size:14px;">I am fortunate to have collaborated with many talented students.</p>
-    <ul class="mentees">
-      <li>
-        <a href="https://taiminglu.com/">TaiMing Lu</a>, JHU Undergraduate &rarr; Princeton CS PhD<br>
-        <span class="note">1 publication on GenEx. <a href="https://www.cs.jhu.edu/news/celebrating-the-2025-department-and-school-awardees/">Michael J. Muuss Research Award</a>; finalist for <a href="https://cra.org/about/awards/outstanding-undergraduate-researcher-award/">CRA Outstanding Undergraduate Researcher Award</a>.</span>
-      </li>
-      <li>
-        <a href="https://zhongshsh.github.io/">Shanshan Zhong</a>, SYSU MS &rarr; CMU LTI PhD<br>
-        <span class="note">1 publication on 4D-Animal.</span>
-      </li>
+
+    <ul class="clean">
+      <li>I have been fortunate to mentor and collaborate with many talented undergraduate and master students whose first-author papers have appeared at leading conferences, including ICLR (Lu et al.; Zhang et al.), NeurIPS (Ma et al.), and ICCV (Yang et al.). Their accomplishments also include an Oral recognition (Zhang), a Muuss research award (Lu), and a CRA Outstanding Undergraduate Researcher Award finalist (Lu). Several have since joined PhD programs at Princeton, CMU, Johns Hopkins, UT Austin, Oxford VGG, and Northwestern.</li>
     </ul>
 
-    <!-- ── Acknowledgement ────────────────────────────── -->
-<!--     <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
-      <tbody><tr><td class="section-heading"><heading>Acknowledgement</heading></td></tr></tbody>
-    </table>
-    <p style="margin:6px 18px 30px; color:#666; font-size:14px; line-height:1.6;">My doctoral research was made possible through the generous support of ARL, IARPA, NSF, NIH, ONR, Lambda, NVIDIA, Google Cloud, JHU, Stanford, Harvard, the Biswas Foundation, the Siebel Foundation, the Patrick J. McGovern Foundation, and the Lustgarten Foundation.</p>
- -->
   </td></tr>
 </tbody></table>
 
